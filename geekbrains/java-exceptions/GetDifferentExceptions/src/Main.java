@@ -18,6 +18,15 @@ public class Main {
 		System.out.printf("Division result %f by %f is equal to %f.\n", firstNum, secondNum, result);
 	}
 
+	public static void findElemIndex(int[] arr, int index) {
+
+		if (index > arr.length - 1) {
+			throw new ArrayIndexOutOfBoundsException("Element with index " + index + " is missing.");
+		} else {
+			System.out.printf("Element with index %d is equal to %d.\n", index, arr[index]);
+		}
+	}
+
 	public static int[] fillArray(int len) {
 
 		int[] array = new int[len];
