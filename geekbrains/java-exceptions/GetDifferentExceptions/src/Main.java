@@ -5,6 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		String[] strArr = { "Text printed before exception is thrown", null, "Text will not be printed" };
+		int[] array = fillArray(12);
 	}
 
 	public static int[] fillArray(int len) {
