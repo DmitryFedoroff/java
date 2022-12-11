@@ -6,6 +6,7 @@ public class Main {
 
 		String[] strArr = { "Text printed before exception is thrown", null, "Text will not be printed" };
 		int[] array = fillArray(12);
+		divideNums(10, 0);
 	}
 
 	public static void divideNums(double firstNum, double secondNum) {
