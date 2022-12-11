@@ -8,6 +8,15 @@ public class Main {
 		int[] array = fillArray(12);
 	}
 
+	public static void divideNums(double firstNum, double secondNum) {
+
+		if (secondNum == 0) {
+			throw new ArithmeticException("You can't divide by zero.");
+		}
+		double result = firstNum / secondNum;
+		System.out.printf("Division result %f by %f is equal to %f.\n", firstNum, secondNum, result);
+	}
+
 	public static int[] fillArray(int len) {
 
 		int[] array = new int[len];
