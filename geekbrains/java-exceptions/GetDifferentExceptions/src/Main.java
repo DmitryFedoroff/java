@@ -38,4 +38,16 @@ public class Main {
 		}
 		return array;
 	}
+
+	public static void printString(String[] arr) {
+
+		int len = arr.length;
+
+		for (int i = 0; i < len; i++) {
+			if (arr[i] == null) {
+				throw new NullPointerException("Element with index " + i + " is missing.");
+			}
+			System.out.println(arr[i]);
+		}
+	}
 }
