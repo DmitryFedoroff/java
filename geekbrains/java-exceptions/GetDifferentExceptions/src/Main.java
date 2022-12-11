@@ -8,6 +8,7 @@ public class Main {
 		int[] array = fillArray(12);
 		divideNums(10, 0);
 		findElemIndex(array, 12);
+		printString(strArr);
 	}
 
 	public static void divideNums(double firstNum, double secondNum) {
