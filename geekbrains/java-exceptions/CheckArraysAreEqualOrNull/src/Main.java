@@ -7,6 +7,8 @@ public class Main {
 
         int[] firstArray = fillArray(10);
         int[] secondArray = fillArray(9);
+        printArray(diffArrays(firstArray, secondArray));
+        printArray(diffArrays(null, secondArray));
     }
 
     public static int[] diffArrays(int[] firstArr, int[] secondArr) {
