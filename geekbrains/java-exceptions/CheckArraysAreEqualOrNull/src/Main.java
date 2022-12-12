@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -17,5 +18,9 @@ public class Main {
             array[i] = rand.nextInt(1, 10);
         }
         return array;
+    }
+
+    public static void printArray(int[] arr) {
+        System.out.println(Arrays.toString(arr));
     }
 }
