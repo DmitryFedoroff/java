@@ -24,9 +24,8 @@ public class Main {
 
         if (index > arr.length - 1) {
             throw new ArrayIndexOutOfBoundsException("Element with index " + index + " is missing.");
-        } else {
-            System.out.printf("Element with index %d is equal to %d.\n", index, arr[index]);
         }
+        System.out.printf("Element with index %d is equal to %d.\n", index, arr[index]);
     }
 
     public static int[] fillArray(int len) {
