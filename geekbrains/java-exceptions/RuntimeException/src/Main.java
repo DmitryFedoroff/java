@@ -9,6 +9,23 @@ public class Main {
         int[] secondArray = fillArray(9);
     }
 
+    public static int[] divideArrays(int[] firstArr, int[] secondArr) {
+
+        if (firstArr.length != secondArr.length) {
+            throw new RuntimeException("Arrays have different lengths.");
+        }
+
+        int[] array = new int[firstArr.length];
+
+        for (int i = 0; i < array.length; i++) {
+            if (secondArr[i] == 0) {
+                throw new RuntimeException("You can't divide by zero.");
+            }
+            array[i] = firstArr[i] / secondArr[i];
+        }
+        return array;
+    }
+
     public static int[] fillArray(int len) {
 
         int[] arr = new int[len];
