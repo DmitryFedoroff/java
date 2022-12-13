@@ -7,6 +7,7 @@ public class Main {
 
         int[] firstArray = fillArray(10);
         int[] secondArray = fillArray(9);
+        printArray(divideArrays(firstArray, secondArray));
     }
 
     public static int[] divideArrays(int[] firstArr, int[] secondArr) {
