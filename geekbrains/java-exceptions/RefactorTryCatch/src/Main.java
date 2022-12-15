@@ -17,5 +17,8 @@ public class Main {
         if (d == 0) {
             throw new ArithmeticException("You can't divide by zero.");
         }
+
+        double catchedRes1 = intArray[index] / d;
+        System.out.println("catchedRes1 = " + catchedRes1);
     }
 }
