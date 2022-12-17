@@ -14,11 +14,11 @@ public static void main(String[] args) throws Exception {
         int[] abc = { 1, 2 };
         abc[3] = 9;
     } catch (Throwable ex) {
-        System.out.println("Что-то пошло не так...");
+        System.out.println("Something went wrong...");
     } catch (NullPointerException ex) {
-        System.out.println("Указатель не может указывать на null!");
+        System.out.println("Attempt to access reference variable that currently points to null.");
     } catch (IndexOutOfBoundsException ex) {
-        System.out.println("Массив выходит за пределы своего размера!");
+        System.out.println("Array accessed with illegal index.");
     }
 }
 ```
