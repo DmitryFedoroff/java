@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         float fNum = inputFloat();
+        System.out.println("Your floating point number: " + fNum);
     }
 
     public static float inputFloat() {
