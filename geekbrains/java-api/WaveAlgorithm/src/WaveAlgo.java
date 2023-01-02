@@ -51,6 +51,41 @@ public class WaveAlgo {
         }
     }
 
+    /**
+     * Find the shortest path's length in maze. Define exit point with finish variable.
+     * Look for neighboring element with value of finish - 1, go to this cell, decrease finish by 1.
+     * Repeat previous step until reach starting point, namely finish = 1.
+     * Output to console coordinates of each step from starting point to exit point.
+     */
+    public static String findShortWay(int[][] mazeTmp) {
+
+        int i = mazeTmp.length - 2;
+        int j = mazeTmp.length - 2;
+        int finish = mazeTmp[i][j];
+        String path = ("(" + i + ", " + j + ") " + "Exit" + "\n");
+
+        while (finish > 1) {
+            if (mazeTmp[i - 1][j] == finish - 1) {
+                i = i - 1;
+                path += ("(" + i + ", " + j + ")" + "\t" + "Down" + "\n");
+                finish -= 1;
+            } else if (mazeTmp[i][j - 1] == finish - 1) {
+                j = j - 1;
+                path += ("(" + i + ", " + j + ")" + "\t" + "Right" + "\n");
+                finish -= 1;
+            } else if (mazeTmp[i + 1][j] == finish - 1) {
+                i = i + 1;
+                path += ("(" + i + ", " + j + ")" + "\t" + "Up" + "\n");
+                finish -= 1;
+            } else if (mazeTmp[i][j + 1] == finish - 1) {
+                j = j + 1;
+                path += ("(" + i + ", " + j + ")" + "\t" + "Left" + "\n");
+                finish -= 1;
+            }
+        }
+        return path;
+    }
+
     public static void printArray(int[][] arr) {
 
         int lenRow = arr.length;
