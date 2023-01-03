@@ -15,5 +15,6 @@ public class Main {
             array[i] = rand.nextInt(max - min + 1) + min;
         }
         System.out.println("Original array: " + Arrays.toString(array));
+        QuickSort.sort(array, 0, len - 1);
     }
 }
