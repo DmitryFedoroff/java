@@ -6,4 +6,17 @@ public class QuickSort {
         arr[low] = arr[pivot];
         arr[pivot] = temp;
     }
+
+    static int partition(int[] arr, int low, int high) {
+
+        int p = low, j;
+
+        for (j = low + 1; j <= high; j++) {
+            if (arr[j] < arr[low]) {
+                swap(arr, ++p, j);
+            }
+        }
+        swap(arr, low, p);
+        return p;
+    }
 }
