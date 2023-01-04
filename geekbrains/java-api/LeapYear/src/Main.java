@@ -14,7 +14,11 @@ public class Main {
 
         String regex = "\\d{4}";
         System.out.print("Enter leap year: ");
-        String input = scan.next();
+        String input = scan.nextLine();
+
+        if (input.trim().isEmpty()) {
+            throw new IllegalArgumentException("Input is null or empty or whitespace");
+        }
 
         while (!input.matches(regex)) {
             System.out.println("Input value is not year");
