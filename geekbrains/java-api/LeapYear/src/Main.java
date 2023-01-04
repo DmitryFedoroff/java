@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         int year = validateYearInput();
+        System.out.print(LeapYear.isLeap(year));
     }
 
     public static int validateYearInput() {
