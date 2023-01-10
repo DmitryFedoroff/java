@@ -14,6 +14,8 @@ public class Main {
         MatrixManipulation.print(matrixA);
         System.out.println("Matrix B:");
         MatrixManipulation.print(matrixB);
+        System.out.println("Result of matrices multiplication:");
+        MatrixManipulation.print(MatrixManipulation.multiply(matrixA, matrixB));
     }
 
     public static int validateIntInput() {
