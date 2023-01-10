@@ -9,6 +9,11 @@ public class Main {
         int m = validateIntInput();
         int[][] matrixA = MatrixManipulation.create(n, m);
         int[][] matrixB = MatrixManipulation.create(m, n);
+
+        System.out.println("Matrix A:");
+        MatrixManipulation.print(matrixA);
+        System.out.println("Matrix B:");
+        MatrixManipulation.print(matrixB);
     }
 
     public static int validateIntInput() {
