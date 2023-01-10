@@ -2,6 +2,24 @@ import java.util.Random;
 
 public class MatrixManipulation {
 
+    public static int[][] multiply(int[][] matrixA, int[][] matrixB) {
+        int rowA = matrixA.length;
+        int columnA = matrixA[0].length;
+        int columnB = matrixB[0].length;
+        int[][] matrixC = new int[rowA][columnB];
+
+        for (int i = 0; i < rowA; i++) {
+            for (int j = 0; j < columnB; j++) {
+                int temp = 0;
+                for (int k = 0; k < columnA; k++) {
+                    temp += matrixA[i][k] * matrixB[k][j];
+                }
+                matrixC[i][j] = temp;
+            }
+        }
+        return matrixC;
+    }
+
     public static int[][] create(int rows, int columns) {
         int[][] matrix = new int[rows][columns];
         int min = 0;
