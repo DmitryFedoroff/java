@@ -7,6 +7,8 @@ public class Main {
         int n = validateIntInput();
         System.out.print("Enter number of matrix columns: ");
         int m = validateIntInput();
+        int[][] matrixA = MatrixManipulation.create(n, m);
+        int[][] matrixB = MatrixManipulation.create(m, n);
     }
 
     public static int validateIntInput() {
