@@ -3,16 +3,15 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
         int year = validateYearInput();
+
         System.out.print(LeapYear.isLeap(year));
     }
 
     public static int validateYearInput() {
-
         Scanner scan = new Scanner(System.in);
-
         String regex = "\\d{4}";
+
         System.out.print("Enter leap year: ");
         String input = scan.nextLine();
 
