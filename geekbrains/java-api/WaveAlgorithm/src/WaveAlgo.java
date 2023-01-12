@@ -8,7 +8,6 @@ public class WaveAlgo {
      * Save step + 1 value in such cells
      */
     private static void makeStep(int[][] maze, int[][] mazeTmp, int step) {
-
         int lenRow = mazeTmp.length - 1;
         int lenCol = mazeTmp[0].length - 1;
 
@@ -36,7 +35,6 @@ public class WaveAlgo {
      * Count number of steps
      */
     public static void countSteps(int[][] maze, int[][] mazeTmp) {
-
         int step = 0;
         int lenRow = mazeTmp.length - 2;
         int lenCol = mazeTmp[0].length - 2;
@@ -58,7 +56,6 @@ public class WaveAlgo {
      * Output to console coordinates of each step from starting point to exit point.
      */
     public static String findShortWay(int[][] mazeTmp) {
-
         int i = mazeTmp.length - 2;
         int j = mazeTmp.length - 2;
         int finish = mazeTmp[i][j];
@@ -87,7 +84,6 @@ public class WaveAlgo {
     }
 
     public static void printPath(int[][] mazeTmp) {
-
         String[] split = findShortWay(mazeTmp).split("\n");
 
         for (int i = split.length - 1; i >= 0; i--) {
@@ -96,7 +92,6 @@ public class WaveAlgo {
     }
 
     public static void printArray(int[][] arr) {
-
         int lenRow = arr.length;
         int lenCol = arr[0].length;
 
