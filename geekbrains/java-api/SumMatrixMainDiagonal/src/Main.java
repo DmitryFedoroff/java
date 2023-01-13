@@ -8,6 +8,9 @@ public class Main {
         System.out.print("Enter number of matrix columns: ");
         int m = validateIntInput();
         int[][] matrix = MatrixManipulation.create(n, m);
+
+        System.out.println("Matrix:");
+        MatrixManipulation.print(matrix);
     }
 
     public static int validateIntInput() {
