@@ -15,4 +15,17 @@ public class MatrixManipulation {
         }
         return matr;
     }
+
+    public static void print(int[][] matr) {
+        int lenRow = matr.length;
+        int lenCol = matr[0].length;
+
+        for (int i = 0; i < lenRow; i++) {
+            for (int j = 0; j < lenCol; j++) {
+                System.out.print(matr[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
 }
