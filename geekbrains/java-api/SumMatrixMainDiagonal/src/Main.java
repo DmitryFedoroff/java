@@ -11,6 +11,7 @@ public class Main {
 
         System.out.println("Matrix:");
         MatrixManipulation.print(matrix);
+        MatrixManipulation.sumMainDiag(matrix);
     }
 
     public static int validateIntInput() {
