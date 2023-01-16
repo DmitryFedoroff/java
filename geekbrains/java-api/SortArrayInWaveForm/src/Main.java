@@ -15,5 +15,6 @@ public class Main {
         }
         System.out.println("Original array: " + Arrays.toString(array));
         WaveSort.sort(array);
+        System.out.println("Sorted array: " + Arrays.toString(array));
     }
 }
