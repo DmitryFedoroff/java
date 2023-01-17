@@ -15,5 +15,6 @@ public class Main {
         }
         System.out.println("Original array: " + Arrays.toString(array));
         ReversedArray.reverse(array);
+        System.out.println("Reversed array: " + Arrays.toString(array));
     }
 }
