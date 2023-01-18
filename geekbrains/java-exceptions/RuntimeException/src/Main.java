@@ -4,14 +4,13 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-
         int[] firstArray = fillArray(10);
         int[] secondArray = fillArray(9);
+
         printArray(divideArrays(firstArray, secondArray));
     }
 
     public static int[] divideArrays(int[] firstArr, int[] secondArr) {
-
         if (firstArr.length != secondArr.length) {
             throw new RuntimeException("Arrays have different lengths.");
         }
@@ -28,7 +27,6 @@ public class Main {
     }
 
     public static int[] fillArray(int len) {
-
         int[] arr = new int[len];
         Random rand = new Random();
 
