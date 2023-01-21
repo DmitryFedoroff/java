@@ -4,6 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         String myStr = validateStrInput();
+
+        StringManipulation.createReversedString(myStr);
     }
 
     public static String validateStrInput() {
