@@ -1,4 +1,15 @@
+import java.util.StringJoiner;
+
 public class StringManipulation {
+
+    public static void createReversedString(String StringToReverse) {
+        StringJoiner sj = new StringJoiner(" ");
+
+        for (String part : StringToReverse.split(" ")) {
+            sj.add(reverseLetters(part.toString()));
+        }
+        System.out.print("Reversed string: " + sj);
+    }
 
     public static String reverseLetters(String s) {
         char[] chars = s.toCharArray();
