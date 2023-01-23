@@ -11,6 +11,8 @@ public class Main {
 
         System.out.println("Original array:");
         ArrayManipulation.print(array);
+        System.out.println("Updated array:");
+        ArrayManipulation.print(ArrayManipulation.replaceElem(array));
     }
 
     public static int validateIntInput() {
