@@ -7,6 +7,7 @@ public class Main {
         int n = validateIntInput();
         System.out.print("Enter number of array columns: ");
         int m = validateIntInput();
+        int[][] array = ArrayManipulation.create(n, m);
     }
 
     public static int validateIntInput() {
