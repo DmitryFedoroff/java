@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +13,7 @@ public class Main {
         for (int i = 0; i < len; i++) {
             array[i] = i + 1;
         }
+        System.out.println("Original array: " + Arrays.toString(array));
     }
 
     public static int validateIntInput() {
