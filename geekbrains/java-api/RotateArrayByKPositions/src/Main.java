@@ -14,6 +14,7 @@ public class Main {
             array[i] = i + 1;
         }
         System.out.println("Original array: " + Arrays.toString(array));
+        System.out.println("Rotated array: " + Arrays.toString(RotatedArray.rotate(array, k)));
     }
 
     public static int validateIntInput() {
