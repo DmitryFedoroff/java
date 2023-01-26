@@ -3,8 +3,15 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        int[] array = new int[15];
+        int len = array.length;
+
         System.out.print("Enter number of k steps: ");
         int k = validateIntInput();
+
+        for (int i = 0; i < len; i++) {
+            array[i] = i + 1;
+        }
     }
 
     public static int validateIntInput() {
