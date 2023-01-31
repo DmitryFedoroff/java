@@ -14,5 +14,6 @@ public class Main {
             array[i] = rand.nextInt(max - min + 1) + min;
         }
         System.out.println("Original array: " + Arrays.toString(array));
+        System.out.println("Number of unique sums of pairs: " + UniqueSums.findUnique(array));
     }
 }
