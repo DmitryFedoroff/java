@@ -19,6 +19,23 @@ public class ArrayManipulation {
         }
     }
 
+    public static void bubbleSortCol(int[][] arr) {
+        int rowsLen = arr.length;
+        int columnsLen = arr[0].length;
+
+        for (int j = 0; j < columnsLen; j++) {
+            for (int i = 0; i < rowsLen; i++) {
+                for (int k = i + 1; k < rowsLen; k++) {
+                    if (arr[i][j] > arr[k][j]) {
+                        int temp = arr[i][j];
+                        arr[i][j] = arr[k][j];
+                        arr[k][j] = temp;
+                    }
+                }
+            }
+        }
+    }
+
     public static int[][] create(int rowsLen, int columnsLen) {
         int[][] arr = new int[rowsLen][columnsLen];
         int min = 0;
