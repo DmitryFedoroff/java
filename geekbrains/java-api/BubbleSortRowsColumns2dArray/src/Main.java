@@ -12,6 +12,7 @@ public class Main {
         System.out.println("Original array:");
         ArrayManipulation.print(array);
         ArrayManipulation.bubbleSortRow(array);
+        ArrayManipulation.bubbleSortCol(array);
     }
 
     public static int validateIntInput() {
