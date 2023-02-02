@@ -13,4 +13,12 @@ public class FiboSequence {
         }
         return fiboNums;
     }
+
+    public static void printFibo(int[] arr) {
+        int len = arr.length;
+
+        for (int j : arr) {
+            System.out.print(j + " ");
+        }
+    }
 }
