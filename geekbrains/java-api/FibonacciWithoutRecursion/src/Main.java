@@ -6,6 +6,9 @@ public class Main {
         System.out.print("Enter length of Fibonacci sequence: ");
         int n = validateIntInput();
         int[] array = new int[n];
+
+        System.out.print("Fibonacci sequence: ");
+        FiboSequence.printFibo(FiboSequence.fillFibo(array, n));
     }
 
     public static int validateIntInput() {
