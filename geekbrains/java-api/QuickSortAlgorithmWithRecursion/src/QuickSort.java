@@ -1,5 +1,16 @@
 public class QuickSort {
 
+    public static void sort(int[] inputArray, int minIdx, int maxIdx) {
+        if (minIdx >= maxIdx) {
+            return;
+        }
+
+        int pivot = getPivotIndex(inputArray, minIdx, maxIdx);
+
+        sort(inputArray, minIdx, pivot - 1);
+        sort(inputArray, pivot + 1, maxIdx);
+    }
+
     static int getPivotIndex(int[] arr, int minIdx, int maxIdx) {
         int pivotIdx = minIdx - 1;
 
