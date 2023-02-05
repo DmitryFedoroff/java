@@ -15,5 +15,6 @@ public class Main {
         }
         System.out.println("Original array: " + Arrays.toString(array));
         QuickSort.sort(array, 0, len - 1);
+        System.out.println("Sorted array: " + Arrays.toString(array));
     }
 }
