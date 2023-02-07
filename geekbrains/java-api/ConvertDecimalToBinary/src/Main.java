@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.print("Enter decimal number to convert: ");
         int n = validateIntInput();
+        int[] array = new int[ConvertedNumber.findArrSize(n)];
     }
 
     public static int validateIntInput() {
