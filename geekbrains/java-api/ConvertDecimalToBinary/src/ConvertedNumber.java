@@ -10,4 +10,15 @@ public class ConvertedNumber {
         }
         return count;
     }
+
+    public static int[] convertToBinary(int[] arr, int num) {
+        int i = 0;
+
+        while (num != 0) {
+            arr[i] = num % 2;
+            num = num / 2;
+            i++;
+        }
+        return arr;
+    }
 }
