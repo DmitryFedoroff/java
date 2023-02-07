@@ -6,6 +6,9 @@ public class Main {
         System.out.print("Enter decimal number to convert: ");
         int n = validateIntInput();
         int[] array = new int[ConvertedNumber.findArrSize(n)];
+
+        System.out.print("Equivalent binary number: ");
+        ConvertedNumber.printBinaryNum(array, n);
     }
 
     public static int validateIntInput() {
