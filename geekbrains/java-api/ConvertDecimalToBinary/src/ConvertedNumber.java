@@ -21,4 +21,13 @@ public class ConvertedNumber {
         }
         return arr;
     }
+
+    public static void printBinaryNum(int[] arr, int num) {
+        arr = convertToBinary(arr, num);
+        int len = arr.length;
+
+        for (int j = len - 1; j >= 0; j--) {
+            System.out.print(arr[j]);
+        }
+    }
 }
