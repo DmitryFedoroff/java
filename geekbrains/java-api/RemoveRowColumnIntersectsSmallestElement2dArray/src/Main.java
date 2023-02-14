@@ -11,6 +11,7 @@ public class Main {
 
         System.out.println("Original array:");
         ArrayManipulation.printArr(array);
+        ArrayManipulation.printArrayMinValues(ArrayManipulation.findArrayMinValues(array));
     }
 
     public static int validateIntInput() {
