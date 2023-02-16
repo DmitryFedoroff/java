@@ -12,6 +12,8 @@ public class Main {
         System.out.println("Original array:");
         ArrayManipulation.printArr(array);
         ArrayManipulation.printArrayMinValues(ArrayManipulation.findArrayMinValues(array));
+        System.out.println("Array without row and column intersects first smallest element:");
+        ArrayManipulation.printNewArr(array, ArrayManipulation.findArrayMinValues(array));
     }
 
     public static int validateIntInput() {
