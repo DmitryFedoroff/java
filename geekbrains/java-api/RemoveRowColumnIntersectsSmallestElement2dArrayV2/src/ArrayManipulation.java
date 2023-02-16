@@ -23,6 +23,13 @@ public class ArrayManipulation {
         return minValues;
     }
 
+    static void printArrayMinValues(Map<String, Integer> minValues) {
+        System.out.println("First smallest element: " + minValues.get("minValue"));
+        System.out.println("Row index: " + minValues.get("minElemRow"));
+        System.out.println("Column index: " + minValues.get("minElemCol"));
+        System.out.println();
+    }
+
     public static int[][] createArr(int rowsLen, int columnsLen) {
         int[][] arr = new int[rowsLen][columnsLen];
         int min = 0;
