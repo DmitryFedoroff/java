@@ -30,6 +30,24 @@ public class ArrayManipulation {
         System.out.println();
     }
 
+    public static void printNewArr(int[][] arr, Map<String, Integer> minValues) {
+        int iMin = minValues.get("minElemRow");
+        int jMin = minValues.get("minElemCol");
+        int rowsLen = arr.length;
+        int columnsLen = arr[0].length;
+
+        for (int i = 0; i < rowsLen; i++) {
+            for (int j = 0; j < columnsLen; j++) {
+                if (i != iMin && j != jMin) {
+                    System.out.print(arr[i][j] + "\t");
+                }
+            }
+            if (i != iMin) {
+                System.out.println();
+            }
+        }
+    }
+
     public static int[][] createArr(int rowsLen, int columnsLen) {
         int[][] arr = new int[rowsLen][columnsLen];
         int min = 0;
