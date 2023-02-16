@@ -1,6 +1,27 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class ArrayManipulation {
+
+    static Map<String, Integer> findArrayMinValues(int[][] arr) {
+        Map<String, Integer> minValues = new HashMap<>();
+        int minElemRow = 0;
+        int minElemCol = 0;
+        int minElem = arr[minElemRow][minElemCol];
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (arr[i][j] < minElem) {
+                    minElem = arr[i][j];
+                    minValues.put("minValue", minElem);
+                    minValues.put("minElemRow", i);
+                    minValues.put("minElemCol", j);
+                }
+            }
+        }
+        return minValues;
+    }
 
     public static int[][] createArr(int rowsLen, int columnsLen) {
         int[][] arr = new int[rowsLen][columnsLen];
