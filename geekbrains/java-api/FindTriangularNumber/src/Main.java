@@ -9,6 +9,11 @@ public class Main {
 
         System.out.print("Enter triangular number to check: ");
         int m = validateIntInput();
+        if (TriangularNum.isTriangular(m)) {
+            System.out.print("Number is triangular");
+        } else {
+            System.out.print("Number is not triangular");
+        }
     }
 
     public static int validateIntInput() {
