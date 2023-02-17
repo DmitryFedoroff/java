@@ -11,6 +11,6 @@ Input: 8
 Output: 36
 ```
 ```
-Input: 8
-Output: false
+Input: 36
+Output: true
 ```
