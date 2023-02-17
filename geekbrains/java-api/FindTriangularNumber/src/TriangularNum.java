@@ -9,4 +9,19 @@ public class TriangularNum {
         }
         System.out.println();
     }
+
+    static boolean isTriangular(int originalNum) {
+        if (originalNum < 0) {
+            return false;
+        }
+
+        int sum = 0;
+
+        for (int i = 1; sum <= originalNum; i++) {
+            sum = sum + i;
+            if (sum == originalNum)
+                return true;
+        }
+        return false;
+    }
 }
