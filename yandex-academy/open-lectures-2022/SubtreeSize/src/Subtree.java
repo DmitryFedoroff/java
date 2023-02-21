@@ -42,4 +42,12 @@ public class Subtree {
         }
         return subtreeSizes[vertex];
     }
+
+    public static void print(int[] ans) {
+        int len = ans.length;
+
+        for (int i = 0; i < len; i++) {
+            System.out.print(ans[i] + " ");
+        }
+    }
 }
