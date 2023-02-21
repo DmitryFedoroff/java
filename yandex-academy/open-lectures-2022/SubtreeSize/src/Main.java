@@ -6,6 +6,8 @@ public class Main {
         System.out.print("Enter the number of vertices: ");
         int n = validateIntInput();
         int[] answer = Subtree.storeSubtreeSizes(n);
+        System.out.print("Size of subtree for each vertex: ");
+        Subtree.print(answer);
     }
 
     public static int validateIntInput() {
