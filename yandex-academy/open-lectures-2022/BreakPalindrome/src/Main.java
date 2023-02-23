@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.print("Enter palindrome: ");
         String myStr = validateStrInput();
+        System.out.printf("Broken palindrome: %s", PalindromeBreaker.breakPalindrome(myStr));
     }
 
     public static String validateStrInput() {
