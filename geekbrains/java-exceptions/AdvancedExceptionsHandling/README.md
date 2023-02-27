@@ -25,21 +25,25 @@ java/
       └─ AdvancedExceptionsHandling/
          ├─ src/
          │  ├─ Main.java
-         │  └─ Registration.java
+         │  ├─ Registration.java
+         │  ├─ WrongLoginException.java
+         │  └─ WrongPasswordException.java
          ├─.gitignore
          └─ README.md
 ```
 
 The Java Advanced Exception Handling project is structured in one directory. Each change in the contents of this directory will be reflected in the table below.
 
-Directories and files                              | Description
----------------------------------------------------|-----------------------------------------------------------------
-`AdvancedExceptionsHandling/`                      | Project file directory
-`AdvancedExceptionsHandling/src/`                  | Source code file directory
-`AdvancedExceptionsHandling/src/Main.java`         | Class that is entry point for program
-`AdvancedExceptionsHandling/src/Registration.java` | Class checks validity of login and password
-`AdvancedExceptionsHandling/.gitignore`            | Specify which files or parts of project should be ignored by Git
-`AdvancedExceptionsHandling/README.md`             | Task, description of project structure and solution
+Directories and files                                        | Description
+-------------------------------------------------------------|-----------------------------------------------------------------
+`AdvancedExceptionsHandling/`                                | Project file directory
+`AdvancedExceptionsHandling/src/`                            | Source code file directory
+`AdvancedExceptionsHandling/src/Main.java`                   | Class that is entry point for program
+`AdvancedExceptionsHandling/src/Registration.java`           | Class checks validity of login and password
+`AdvancedExceptionsHandling/src/WrongLoginException.java`    | Custom exception class for login 
+`AdvancedExceptionsHandling/src/WrongPasswordException.java` | Custom exception class for password
+`AdvancedExceptionsHandling/.gitignore`                      | Specify which files or parts of project should be ignored by Git
+`AdvancedExceptionsHandling/README.md`                       | Task, description of project structure and solution
 
 ## 🟦 Solution
 
