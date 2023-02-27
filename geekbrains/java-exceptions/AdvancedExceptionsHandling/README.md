@@ -29,8 +29,9 @@ java/
 The Java Advanced Exception Handling project is structured in one directory. Each change in the contents of this directory will be reflected in the table below.
 
 Directories and files         | Description
-------------------------------|--------------------------------------------------------
+------------------------------|-----------------------------------------------------------------
 `AdvancedExceptionsHandling/` | Project file directory
+`.gitignore`                  | Specify which files or parts of project should be ignored by Git
 `README.md`                   | Task, description of the project structure and solution
 
 ## 🟦 Solution
