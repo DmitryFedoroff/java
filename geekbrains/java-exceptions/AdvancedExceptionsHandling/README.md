@@ -42,8 +42,8 @@ Directories and files                                        | Description
 `AdvancedExceptionsHandling/src/Registration.java`           | Class checks validity of login and password
 `AdvancedExceptionsHandling/src/WrongLoginException.java`    | Custom exception class for login 
 `AdvancedExceptionsHandling/src/WrongPasswordException.java` | Custom exception class for password
-`AdvancedExceptionsHandling/.gitignore`                      | Specify which files or parts of project should be ignored by Git
-`AdvancedExceptionsHandling/README.md`                       | Task, description of project structure and solution
+`AdvancedExceptionsHandling/.gitignore`                      | File specifies which files or parts of project should be ignored by Git
+`AdvancedExceptionsHandling/README.md`                       | File contains task, description of project structure and solution
 
 ## 🟦 Solution
 
