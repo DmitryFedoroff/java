@@ -59,6 +59,10 @@ The `Main` class is the entry point for the program, containing the `main()` met
 
 The `Registration` class contains the `register()` method that takes in the `login`, `password` and `confirmPassword` strings as parameters. This method calls two private methods `validateLogin()` and `validatePassword()` to validate the `login` and `password` strings. If both validations pass, the register method returns `true`, indicating that the registration was successful. If either validation fails, the register method catches the corresponding exception and returns `false`, indicating that the registration failed.
 
+The `validateLogin()` method checks if the `login` string matches a regex pattern `^[A-Za-z0-9_]{1,19}$` that allows for Latin letters, numbers, and underscores and is no longer than 19 characters. If the login string doesn't match the pattern, the method throws a `WrongLoginException`.
+
+The `validatePassword()` method checks if the password string matches a similar regex pattern to the `login` string and is no longer than 19 characters. If the `password` string doesn't match the pattern, the method throws a `WrongPasswordException` with a message indicating the password requirements. The method also checks if the `password` string matches the `confirmPassword` string. If the `password` and `confirmPassword` don't match, the method also throws a `WrongPasswordException`.
+
 </details>
 
 ## 🟫 Git
