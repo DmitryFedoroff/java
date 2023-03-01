@@ -47,6 +47,13 @@ Directories and files                                        | Description
 
 ## 🟦 Solution
 
+<details>
+<summary><b>Main class</b></summary>
+
+The `Main` class is the entry point for the program, containing the `main()` method that executes when the program is run. The `Main` class initializes the `login`, `password` and `confirmPassword` variables with sample values, calls the `register()` method of the `Registration` class with those variables, and outputs a message indicating whether the registration was successful or not.
+
+</details>
+
 ## 🟫 Git
 
 
