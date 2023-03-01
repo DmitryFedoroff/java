@@ -54,6 +54,13 @@ The `Main` class is the entry point for the program, containing the `main()` met
 
 </details>
 
+<details>
+<summary><b>Registration class</b></summary>
+
+The `Registration` class contains the `register()` method that takes in the `login`, `password` and `confirmPassword` strings as parameters. This method calls two private methods `validateLogin()` and `validatePassword()` to validate the `login` and `password` strings. If both validations pass, the register method returns `true`, indicating that the registration was successful. If either validation fails, the register method catches the corresponding exception and returns `false`, indicating that the registration failed.
+
+</details>
+
 ## 🟫 Git
 
 
