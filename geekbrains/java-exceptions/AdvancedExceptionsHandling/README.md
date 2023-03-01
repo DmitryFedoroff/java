@@ -65,6 +65,13 @@ The `validatePassword()` method checks if the password string matches a similar 
 
 </details>
 
+<details>
+<summary><b>WrongLoginException and WrongPasswordException classes</b></summary>
+
+The `WrongLoginException` and `WrongPasswordException` classes extend the `Exception` class, which means they are custom exception classes that can be thrown in the program. The `WrongLoginException` class has two constructors, one with a default message and another that takes in a custom message. The `WrongPasswordException` class also has two constructors, one that takes in a custom message and another with a default message.
+
+</details>
+
 ## 🟫 Git
 
 
