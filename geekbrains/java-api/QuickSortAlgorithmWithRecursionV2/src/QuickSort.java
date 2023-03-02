@@ -1,5 +1,15 @@
 public class QuickSort {
 
+    public static void sort(int[] inputArray, int minIdx, int maxIdx) {
+        if (minIdx < maxIdx) {
+
+            int pivot = randomizedPartition(inputArray, minIdx, maxIdx);
+
+            sort(inputArray, minIdx, pivot - 1);
+            sort(inputArray, pivot + 1, maxIdx);
+        }
+    }
+
     static int randomizedPartition(int[] arr, int minIdx, int maxIdx) {
         int randIdx = (int) (Math.random() * (maxIdx - minIdx + 1)) + minIdx;
 
