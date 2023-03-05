@@ -1,3 +1,7 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 public class UserInputParser {
 
     public static UserData parse(String input) throws WrongParsingDataException {
@@ -39,5 +43,12 @@ public class UserInputParser {
             throw new WrongParsingDataException("Parsing error. Invalid format for phone number");
         }
         return phoneNumber;
+    }
+
+    private static String validateGender(String gender) throws WrongParsingDataException {
+        if (!gender.matches("[fm]|other")) {
+            throw new WrongParsingDataException("Parsing error. Invalid format for gender");
+        }
+        return gender;
     }
 }
