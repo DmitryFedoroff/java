@@ -33,4 +33,11 @@ public class UserInputParser {
             throw new WrongParsingDataException("Parsing error. Invalid format for birth date", e);
         }
     }
+
+    private static String validatePhoneNumber(String phoneNumber) throws WrongParsingDataException {
+        if (!phoneNumber.matches("^\\d{1,15}$")) {
+            throw new WrongParsingDataException("Parsing error. Invalid format for phone number");
+        }
+        return phoneNumber;
+    }
 }
