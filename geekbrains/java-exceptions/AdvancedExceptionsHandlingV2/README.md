@@ -37,17 +37,21 @@ java/
 └─ geekbrains/
    └─ java-exceptions/
       └─ AdvancedExceptionsHandlingV2/
+         ├─ src/
+         │  └─ Main.java
          ├─.gitignore
          └─ README.md
 ```
 
 The Java Advanced Exception Handling v2 project is structured in one directory. Each change in the contents of this directory will be reflected in the table below.
 
-Directories and files                     | Description
-------------------------------------------|-----------------------------------------------------------------
-`AdvancedExceptionsHandlingV2/`           | Project file directory
-`AdvancedExceptionsHandlingV2/.gitignore` | File specifies which files or parts of project should be ignored by Git
-`AdvancedExceptionsHandlingV2/README.md`  | File contains task, description of project structure and solution
+Directories and files                      | Description
+-------------------------------------------|-----------------------------------------------------------------
+`AdvancedExceptionsHandlingV2/`            | Project file directory
+`AdvancedExceptionsHandling/src/`          | Source code file directory
+`AdvancedExceptionsHandling/src/Main.java` | Class that is entry point for program
+`AdvancedExceptionsHandlingV2/.gitignore`  | File specifies which files or parts of project should be ignored by Git
+`AdvancedExceptionsHandlingV2/README.md`   | File contains task, description of project structure and solution
 
 ## 🟦 Solution
 
