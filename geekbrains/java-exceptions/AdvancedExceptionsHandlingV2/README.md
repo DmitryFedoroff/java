@@ -40,22 +40,24 @@ java/
          ├─ src/
          │  ├─ Main.java
          │  ├─ UserData.java
-         │  └─ UserInputParser.java
+         │  ├─ UserInputParser.java
+         │  └─ WrongParsingDataException.java
          ├─.gitignore
          └─ README.md
 ```
 
 The Java Advanced Exception Handling v2 project is structured in one directory. Each change in the contents of this directory will be reflected in the table below.
 
-Directories and files                                 | Description
-------------------------------------------------------|------------------------------------------------------------------------
-`AdvancedExceptionsHandlingV2/`                       | Project file directory
-`AdvancedExceptionsHandling/src/`                     | Source code file directory
-`AdvancedExceptionsHandling/src/Main.java`            | Class that is entry point for program
-`AdvancedExceptionsHandling/src/UserData.java`        | Class defines model for storing user data
-`AdvancedExceptionsHandling/src/UserInputParser.java` | Class parses user input and validates each input field
-`AdvancedExceptionsHandlingV2/.gitignore`             | File specifies which files or parts of project should be ignored by Git
-`AdvancedExceptionsHandlingV2/README.md`              | File contains task, description of project structure and solution
+Directories and files                                           | Description
+----------------------------------------------------------------|------------------------------------------------------------------------
+`AdvancedExceptionsHandlingV2/`                                 | Project file directory
+`AdvancedExceptionsHandling/src/`                               | Source code file directory
+`AdvancedExceptionsHandling/src/Main.java`                      | Class that is entry point for program
+`AdvancedExceptionsHandling/src/UserData.java`                  | Class defines model for storing user data
+`AdvancedExceptionsHandling/src/UserInputParser.java`           | Class parses user input and validates each input field
+`AdvancedExceptionsHandling/src/WrongParsingDataException.java` | Custom exception class for handling errors during parsing input data
+`AdvancedExceptionsHandlingV2/.gitignore`                       | File specifies which files or parts of project should be ignored by Git
+`AdvancedExceptionsHandlingV2/README.md`                        | File contains task, description of project structure and solution
 
 ## 🟦 Solution
 
