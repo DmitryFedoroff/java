@@ -22,4 +22,15 @@ public class UserInputParser {
         }
         return name;
     }
+
+    private static String validateBirthDate(String birthDate) throws WrongParsingDataException {
+        try {
+            DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+            LocalDate date = LocalDate.parse(birthDate, inputFormatter);
+            DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+            return date.format(outputFormatter);
+        } catch (DateTimeParseException e) {
+            throw new WrongParsingDataException("Parsing error. Invalid format for birth date", e);
+        }
+    }
 }
