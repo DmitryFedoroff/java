@@ -61,5 +61,12 @@ Directories and files                                             | Description
 
 ## 🟦 Solution
 
+<details>
+<summary><b>Main class</b></summary>
+
+The `Main` class contains the `main()` method, which serves as the entry point for the program and calls the `processUserInput()` method. This method prompts the user to enter data in the format `LastName FirstName PatronymicName BirthDate PhoneNumber Gender`. The `processUserInput()` method then calls the static `parse()` method in the `UserInputParser` class to parse the input and create an instance of the `UserData` class. If there is an error during parsing, the method throws a `WrongParsingDataException`. If parsing is successful, the data is written to a text file named after the user's last name.
+
+</details>
+
 ## 🟫 Git
 
