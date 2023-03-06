@@ -95,3 +95,4 @@ The `WrongParsingDataException` is a custom exception that extends the `Exceptio
 
 ## 🟫 Git
 
+While working with the repository, in addition to the basic commands, we worked on creating `git checkout -b <branch-name>`, merging `git merge <branch-name>` and removing `git branch -d <branch-name>` branches on the local machine, as well as merging branches through `pull request` and removing `git push origin -d <branch-name>` branches in the remote repository.
