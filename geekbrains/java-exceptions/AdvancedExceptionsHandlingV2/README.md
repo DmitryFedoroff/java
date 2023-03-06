@@ -75,5 +75,16 @@ The `UserData` class is a data model that represents the user input. It contains
 
 </details>
 
+<details>
+<summary><b>UserInputParser class</b></summary>
+
+The `UserInputParser` class is a utility class that performs validation on the user input and creates an instance of the `UserData` class. The `parse()` method takes the user input string and splits it into its constituent parts (last name, first name, patronymic name, birth date, phone number, gender) and checks the length of the string. Length checking is necessary to ensure that the user has entered only the required data, and has not forgotten or entered extra information.
+
+Each part of the input string is then validated according to specific validation criteria using four static validation methods: `validateName()`, `validateBirthDate()`, `validatePhoneNumber()`, and `validateGender()`. For example, the private static `validatePhoneNumber()` method takes a string variable called `phoneNumber` as a parameter and checks it against a regular expression pattern `^\d{1,15}$`.
+
+If all the data passes validation, the method returns an instance of the `UserData` class, otherwise a `WrongParsingDataException` is thrown.
+
+</details>
+
 ## 🟫 Git
 
