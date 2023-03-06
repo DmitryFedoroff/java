@@ -68,5 +68,12 @@ The `Main` class contains the `main()` method, which serves as the entry point f
 
 </details>
 
+<details>
+<summary><b>UserData class</b></summary>
+
+The `UserData` class is a data model that represents the user input. It contains variables for `lastName`, `firstName`, `patronymicName`, `birthDate`, `phoneNumber`, and `gender`, a constructor, and a `getLastName()` method. The `toString()` method is also overridden to format the data in the desired `<LastName><FirstName><PatronymicName><BirthDate><PhoneNumber><Gender>` format for writing to a text file.
+
+</details>
+
 ## 🟫 Git
 
