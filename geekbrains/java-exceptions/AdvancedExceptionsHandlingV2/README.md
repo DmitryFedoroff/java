@@ -86,5 +86,12 @@ If all the data passes validation, the method returns an instance of the `UserDa
 
 </details>
 
+<details>
+<summary><b>WrongParsingDataException class</b></summary>
+
+The `WrongParsingDataException` is a custom exception that extends the `Exception` class and is used to handle errors that occur during data parsing. It is thrown when the user's input data does not pass validation. It contains constructors with error messages and an exception object that caused the error.
+
+</details>
+
 ## 🟫 Git
 
