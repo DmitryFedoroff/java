@@ -4,6 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter words from dictionary: ");
+        Set<String> dictionary = new HashSet<>(Arrays.asList(scanner.nextLine().split(" ")));
         scanner.close();
     }
 }
