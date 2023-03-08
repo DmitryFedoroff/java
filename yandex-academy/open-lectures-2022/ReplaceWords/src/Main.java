@@ -10,6 +10,7 @@ public class Main {
 
         List<String> replacedWords = WordReplacer.replaceWords(dictionary);
 
+        System.out.println("Text with replacements: " + String.join(" ", replacedWords));
         scanner.close();
     }
 }
