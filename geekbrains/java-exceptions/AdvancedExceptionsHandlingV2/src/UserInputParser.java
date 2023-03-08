@@ -6,6 +6,7 @@ public class UserInputParser {
 
     public static UserData parse(String input) throws WrongParsingDataException {
         String[] data = input.split(" ");
+
         if (data.length != 6) {
             throw new WrongParsingDataException("Entered incorrect number of data");
         }

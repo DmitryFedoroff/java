@@ -17,6 +17,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter following data separated by whitespace:");
         System.out.println("LastName FirstName PatronymicName BirthDate PhoneNumber Gender:");
+
         String input = scanner.nextLine();
 
         UserData userData;
