@@ -7,6 +7,9 @@ public class Main {
 
         System.out.print("Enter words from dictionary: ");
         Set<String> dictionary = new HashSet<>(Arrays.asList(scanner.nextLine().split(" ")));
+
+        List<String> replacedWords = WordReplacer.replaceWords(dictionary);
+
         scanner.close();
     }
 }
