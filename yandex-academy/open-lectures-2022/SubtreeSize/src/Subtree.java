@@ -17,15 +17,18 @@ public class Subtree {
             Scanner input = new Scanner(System.in);
             int vertexA = input.nextInt();
             int vertexB = input.nextInt();
+
             adjacencyList.get(vertexA).add(vertexB);
             adjacencyList.get(vertexB).add(vertexA);
         }
 
         int[] subtreeSizes = new int[numberOfVertices + 1];
         Arrays.fill(subtreeSizes, -1);
+
         calculateSubtreeSizes(1, adjacencyList, subtreeSizes);
 
         int[] result = new int[numberOfVertices];
+
         for (int i = 1; i <= numberOfVertices; i++) {
             result[i - 1] = subtreeSizes[i];
         }
