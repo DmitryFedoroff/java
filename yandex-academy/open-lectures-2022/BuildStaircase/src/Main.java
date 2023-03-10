@@ -6,7 +6,8 @@ public class Main {
         System.out.print("Enter number of blocks: ");
         int n = validateIntInput();
 
-        System.out.print("Maximum number of steps in staircase: " + Staircase.countSteps(n));
+        System.out.println("Maximum number of steps in staircase: " + Staircase.countSteps(n));
+        Staircase.printStaircase(n);
     }
 
     public static int validateIntInput() {
