@@ -11,4 +11,19 @@ public class Staircase {
         }
         return steps;
     }
+
+    public static void printStaircase(int maxStairBlocks) {
+        int nowInStep = 1;
+        int blocks = 0;
+
+        for (int i = 1; i <= maxStairBlocks; i++) {
+            System.out.print("\u25A1 ");
+            blocks += 1;
+            if (blocks == nowInStep) {
+                System.out.print("\n");
+                nowInStep += 1;
+                blocks = 0;
+            }
+        }
+    }
 }
