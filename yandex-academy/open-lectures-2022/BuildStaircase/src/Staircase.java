@@ -1,11 +1,11 @@
 public class Staircase {
 
-    public static int countSteps(int blocks) {
+    public static int countSteps(int maxStairBlocks) {
         int nowInStep = 1;
         int steps = 0;
 
-        while (blocks >= nowInStep) {
-            blocks -= nowInStep;
+        while (maxStairBlocks >= nowInStep) {
+            maxStairBlocks -= nowInStep;
             steps += 1;
             nowInStep += 1;
         }
