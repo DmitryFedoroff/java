@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         try {
             processUserInput();
@@ -15,9 +16,9 @@ public class Main {
 
     public static void processUserInput() throws WrongParsingDataException {
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter following data separated by whitespace:");
         System.out.println("LastName FirstName PatronymicName BirthDate PhoneNumber Gender:");
-
         String input = scanner.nextLine();
 
         UserData userData;
