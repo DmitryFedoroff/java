@@ -12,6 +12,8 @@ public class Main {
         validateAgeInput(n, age);
 
         int result = Invitation.countInvites(n, age);
+
+        System.out.printf("Total number of birthday invitations: %d", result);
     }
 
     public static int[] validateIntInput() {
