@@ -31,4 +31,10 @@ public class Main {
         }
         return result;
     }
+
+    public static void validateAgeInput(int n, int[] age) {
+        if (age.length != n) {
+            throw new IllegalArgumentException("The length of age array does not match number of people entered");
+        }
+    }
 }
