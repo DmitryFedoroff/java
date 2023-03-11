@@ -8,6 +8,8 @@ public class Main {
 
         System.out.print("Age of people: ");
         int[] age = validateIntInput();
+
+        validateAgeInput(n, age);
     }
 
     public static int[] validateIntInput() {
