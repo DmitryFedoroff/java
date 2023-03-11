@@ -10,6 +10,8 @@ public class Main {
         int[] age = validateIntInput();
 
         validateAgeInput(n, age);
+
+        int result = Invitation.countInvites(n, age);
     }
 
     public static int[] validateIntInput() {
