@@ -10,5 +10,8 @@ public class Main {
         int result = ApplicationFinder.findMaxApplications(totalApplications, appDescInputValidator);
 
         System.out.print("Max number of applications that can be fulfilled: " + result);
+
+        totalAppInputValidator.closeScanner();
+        appDescInputValidator.closeScanner();
     }
 }
