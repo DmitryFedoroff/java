@@ -6,5 +6,7 @@ public class Main {
 
         System.out.print("Enter number of applications: ");
         int totalApplications = totalAppInputValidator.validate();
+
+        int result = ApplicationFinder.findMaxApplications(totalApplications, appDescInputValidator);
     }
 }
