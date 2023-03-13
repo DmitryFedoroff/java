@@ -3,5 +3,8 @@ public class Main {
     public static void main(String[] args) {
         TotalAppInputValidator totalAppInputValidator = new TotalAppInputValidator();
         AppDescInputValidator appDescInputValidator = new AppDescInputValidator();
+
+        System.out.print("Enter number of applications: ");
+        int totalApplications = totalAppInputValidator.validate();
     }
 }
