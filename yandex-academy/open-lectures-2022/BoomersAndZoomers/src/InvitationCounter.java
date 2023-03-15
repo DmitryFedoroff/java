@@ -1,19 +1,19 @@
 import java.util.Arrays;
 
-public class Invitation {
+public class InvitationCounter {
 
-    public static int countInvites(int n, int[] age) {
-        Arrays.sort(age);
-
+    public static int countInvites(int people, int[] ages) {
         int left = 0;
         int right = 0;
         int result = 0;
 
-        for (int i = 0; i < n; i++) {
-            while (left < n && age[left] <= 0.5 * age[i] + 7) {
+        Arrays.sort(ages);
+
+        for (int i = 0; i < people; i++) {
+            while (left < people && ages[left] <= 0.5 * ages[i] + 7) {
                 left++;
             }
-            while (right < n && age[right] <= age[i]) {
+            while (right < people && ages[right] <= ages[i]) {
                 right++;
             }
             if (right > left + 1) {
