@@ -1,46 +1,21 @@
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
-        System.out.print("Number of people: ");
-        int n = validateIntInput()[0];
+        TotalPeopleInputValidator totalPeopleInputValidator = new TotalPeopleInputValidator();
 
-        System.out.print("Age of people: ");
-        int[] age = validateIntInput();
+        System.out.print("Enter number of people: ");
+        int totalPeople = totalPeopleInputValidator.validate();
 
-        validateAgeInput(n, age);
+        PeopleAgeInputValidator peopleAgeInputValidator = new PeopleAgeInputValidator(totalPeople);
 
-        int result = Invitation.countInvites(n, age);
+        System.out.print("Enter age of people: ");
+        int[] peopleAges = peopleAgeInputValidator.validate();
 
-        System.out.printf("Total number of birthday invitations: %d", result);
-    }
+        int result = InvitationCounter.countInvites(totalPeople, peopleAges);
 
-    public static int[] validateIntInput() {
-        Scanner scan = new Scanner(System.in);
-        String input = scan.nextLine();
+        System.out.printf("Total number of birthday invitations: " + result);
 
-        if (input.trim().isEmpty()) {
-            throw new IllegalArgumentException("Input is null or empty or whitespace");
-        }
-
-        String[] inputArray = input.trim().split("\\s+");
-        int[] result = new int[inputArray.length];
-        String regex = "^[1-9]\\d*$";
-
-        for (int i = 0; i < inputArray.length; i++) {
-            String inputNumber = inputArray[i];
-            if (!inputNumber.matches(regex)) {
-                throw new IllegalArgumentException("Input value is not positive integer or zero");
-            }
-            result[i] = Integer.parseInt(inputNumber);
-        }
-        return result;
-    }
-
-    public static void validateAgeInput(int n, int[] age) {
-        if (age.length != n) {
-            throw new IllegalArgumentException("The length of age array does not match number of people entered");
-        }
+        totalPeopleInputValidator.closeScanner();
+        peopleAgeInputValidator.closeScanner();
     }
 }
