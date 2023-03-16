@@ -17,7 +17,7 @@ public class AppDescInputValidator implements InputValidatable<int[]> {
         String[] applications = input.split("\\s+");
         int size = 2;
 
-        while (applications.length > size) {
+        while (applications.length != size) {
             System.out.println("Invalid input. Please enter only two natural numbers separated by whitespace");
             System.out.print("Please try again: ");
             input = scan.nextLine();
