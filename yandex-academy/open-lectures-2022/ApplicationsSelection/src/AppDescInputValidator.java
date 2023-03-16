@@ -9,7 +9,7 @@ public class AppDescInputValidator implements InputValidatable<int[]> {
         String regex = "^[1-9]\\d*(\\s[1-9]\\d*)*$";
 
         while (input.trim().isEmpty() || !input.matches(regex)) {
-            System.out.println("Input value is not two natural numbers separated by whitespace");
+            System.out.println("Input values are not two natural numbers separated by whitespace");
             System.out.print("Please try again: ");
             input = scan.nextLine();
         }
