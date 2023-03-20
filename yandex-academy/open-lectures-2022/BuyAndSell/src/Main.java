@@ -13,5 +13,7 @@ public class Main {
 
         System.out.print("Enter prices of gas on each day separated by space: ");
         int[] prices = dailyPriceInputValidator.validate();
+
+        TradingDayFinder tradingDayFinder = new TradingDayFinder();
     }
 }
