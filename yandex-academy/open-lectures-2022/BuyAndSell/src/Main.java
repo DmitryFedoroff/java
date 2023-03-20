@@ -15,5 +15,6 @@ public class Main {
         int[] prices = dailyPriceInputValidator.validate();
 
         TradingDayFinder tradingDayFinder = new TradingDayFinder();
+        int[] result = tradingDayFinder.find(days, investment, prices);
     }
 }
