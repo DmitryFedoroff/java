@@ -16,5 +16,8 @@ public class Main {
 
         TradingDayFinder tradingDayFinder = new TradingDayFinder();
         int[] result = tradingDayFinder.find(days, investment, prices);
+
+        System.out.println("Numbers of days for buying and selling gas: " + result[0] + " " + result[1]);
+        System.out.println("Max revenue: " + result[2]);
     }
 }
