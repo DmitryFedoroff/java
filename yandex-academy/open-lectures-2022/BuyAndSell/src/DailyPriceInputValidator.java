@@ -21,7 +21,7 @@ public class DailyPriceInputValidator implements InputValidatable<int[]> {
 
         String[] prices = input.split("\\s+");
 
-        while (prices.length > size) {
+        while (prices.length != size) {
             System.out.println("Invalid input. Please enter " + size + " natural numbers separated by whitespace");
             System.out.print("Please try again: ");
             return validate();
