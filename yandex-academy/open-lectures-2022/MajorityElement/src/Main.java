@@ -14,5 +14,8 @@ public class Main {
         int result = MajorityElementFinder.findMajority(n, nums);
 
         System.out.printf("Majority element in array: " + result);
+
+        arrayLenInputValidator.closeScanner();
+        arrayNumsInputValidator.closeScanner();
     }
 }
