@@ -10,5 +10,7 @@ public class Main {
 
         System.out.print("Enter numbers separated by whitespace: ");
         int[] nums = arrayNumsInputValidator.validate();
+
+        int result = MajorityElementFinder.findMajority(n, nums);
     }
 }
