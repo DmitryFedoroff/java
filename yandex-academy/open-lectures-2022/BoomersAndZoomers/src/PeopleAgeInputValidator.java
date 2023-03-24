@@ -21,7 +21,7 @@ public class PeopleAgeInputValidator implements InputValidatable<int[]> {
 
         String[] ages = input.split("\\s+");
 
-        while (ages.length > size) {
+        while (ages.length != size) {
             System.out.println("Invalid input. Please enter " + size + " natural numbers separated by whitespace");
             System.out.print("Please try again: ");
             return validate();
