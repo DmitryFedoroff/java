@@ -13,5 +13,7 @@ public class Main {
 
         MajorityElementFinder majorityElementFinder = new MajorityElementFinder();
         int result = majorityElementFinder.findMajority(n, nums);
+
+        System.out.printf("Majority element in array: " + result);
     }
 }
