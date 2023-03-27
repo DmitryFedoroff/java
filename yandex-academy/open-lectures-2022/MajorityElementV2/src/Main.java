@@ -12,5 +12,6 @@ public class Main {
         int[] nums = arrayNumsInputValidator.validate();
 
         MajorityElementFinder majorityElementFinder = new MajorityElementFinder();
+        int result = majorityElementFinder.findMajority(n, nums);
     }
 }
