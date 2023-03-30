@@ -18,5 +18,8 @@ public class Main {
         int result = cowStallDistanceFinder.binarySearch(numOfCows, stallCoords);
 
         System.out.printf("Largest possible allowable distance: " + result);
+
+        natNumInputValidator.closeScanner();
+        arrayNumsInputValidator.closeScanner();
     }
 }
