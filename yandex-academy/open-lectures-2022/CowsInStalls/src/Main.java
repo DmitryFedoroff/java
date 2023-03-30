@@ -13,5 +13,7 @@ public class Main {
 
         System.out.print("Enter stalls coordinates in ascending order: ");
         int[] stallCoords = arrayNumsInputValidator.validate();
+
+        CowStallDistanceFinder cowStallDistanceFinder = new CowStallDistanceFinder();
     }
 }
