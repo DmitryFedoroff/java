@@ -15,5 +15,6 @@ public class Main {
         int[] stallCoords = arrayNumsInputValidator.validate();
 
         CowStallDistanceFinder cowStallDistanceFinder = new CowStallDistanceFinder();
+        int result = cowStallDistanceFinder.binarySearch(numOfCows, stallCoords);
     }
 }
