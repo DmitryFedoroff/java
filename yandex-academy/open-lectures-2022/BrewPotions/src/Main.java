@@ -18,5 +18,8 @@ public class Main {
         int result = potionUtilityCalculator.calcUtility(potionUtilityCalculator.binarySearch());
 
         System.out.print("Maximum total utility of potions: " + result);
+
+        natNumInputValidator.closeScanner();
+        arrayNumsInputValidator.closeScanner();
     }
 }
