@@ -15,5 +15,6 @@ public class Main {
         int[] utility = arrayNumsInputValidator.validate();
 
         PotionUtilityCalculator potionUtilityCalculator = new PotionUtilityCalculator(numOfIngredients, numOfPotions, utility);
+        int result = potionUtilityCalculator.calcUtility(potionUtilityCalculator.binarySearch());
     }
 }
