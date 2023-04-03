@@ -17,5 +17,6 @@ public class Main {
         List<Integer> utility = listNumsInputValidator.validate();
 
         PotionUtilityCalculator potionUtilityCalculator = new PotionUtilityCalculator(numOfIngredients, numOfPotions, utility);
+        int result = potionUtilityCalculator.calcUtility(potionUtilityCalculator.binarySearch());
     }
 }
