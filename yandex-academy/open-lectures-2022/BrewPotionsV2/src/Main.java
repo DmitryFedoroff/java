@@ -15,5 +15,7 @@ public class Main {
 
         System.out.print("Enter ingredients utility (higher number is better): ");
         List<Integer> utility = listNumsInputValidator.validate();
+
+        PotionUtilityCalculator potionUtilityCalculator = new PotionUtilityCalculator(numOfIngredients, numOfPotions, utility);
     }
 }
