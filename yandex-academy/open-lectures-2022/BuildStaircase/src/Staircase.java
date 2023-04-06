@@ -1,6 +1,6 @@
 public class Staircase {
 
-    public static int countSteps(int maxStairBlocks) {
+    public int countSteps(int maxStairBlocks) {
         int nowInStep = 1;
         int steps = 0;
 
@@ -12,7 +12,7 @@ public class Staircase {
         return steps;
     }
 
-    public static void printStaircase(int maxStairBlocks) {
+    public void printStaircase(int maxStairBlocks) {
         int nowInStep = 1;
         int blocks = 0;
 
