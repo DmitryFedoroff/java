@@ -1,29 +1,17 @@
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
+        NatNumInputValidator natNumInputValidator = new NatNumInputValidator();
+
         System.out.print("Enter number of blocks: ");
-        int n = validateIntInput();
+        int n = natNumInputValidator.validate();
 
-        System.out.println("Maximum number of steps in staircase: " + Staircase.countSteps(n));
+        Staircase staircase = new Staircase();
+        int steps = staircase.countSteps(n);
+
+        System.out.println("Maximum number of steps in staircase: " + steps);
         Staircase.printStaircase(n);
-    }
 
-    public static int validateIntInput() {
-        Scanner scan = new Scanner(System.in);
-        String input = scan.nextLine();
-        String regex = "^[1-9]\\d*$";
-
-        if (input.trim().isEmpty()) {
-            throw new IllegalArgumentException("Input is null or empty or whitespace");
-        }
-
-        while (!input.matches(regex)) {
-            System.out.println("Input value is not positive integer or zero");
-            System.out.print("Please try again: ");
-            input = scan.next();
-        }
-        return Integer.parseInt(input);
+        natNumInputValidator.closeScanner();
     }
 }
