@@ -10,7 +10,7 @@ public class Main {
         int steps = staircase.countSteps(n);
 
         System.out.println("Maximum number of steps in staircase: " + steps);
-        Staircase.printStaircase(n);
+        staircase.printStaircase(n);
 
         natNumInputValidator.closeScanner();
     }
