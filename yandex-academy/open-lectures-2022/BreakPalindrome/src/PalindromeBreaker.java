@@ -1,26 +1,26 @@
 public class PalindromeBreaker {
 
-    public static String breakPalindrome(String s) {
-        if (s.length() == 1) {
+    public String breakPalindrome(String palindrome) {
+        if (palindrome.length() == 1) {
             return "";
         }
 
-        int middle = s.length() / 2;
-        boolean flag = false;
-        String ans = "";
+        int middle = palindrome.length() / 2;
+        boolean hasChanged = false;
+        String result = "";
 
         for (int i = 0; i < middle; i++) {
-            if (s.charAt(i) != 'a') {
-                ans = s.substring(0, i) + "a" + s.substring(i+1);
-                flag = true;
+            if (palindrome.charAt(i) != 'a') {
+                result = palindrome.substring(0, i) + "a" + palindrome.substring(i+1);
+                hasChanged = true;
                 break;
             }
         }
 
-        if (flag) {
-            return ans;
+        if (hasChanged) {
+            return result;
         } else {
-            return s.substring(0, s.length()-1) + "b";
+            return palindrome.substring(0, palindrome.length()-1) + "b";
         }
     }
 }
