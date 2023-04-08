@@ -8,5 +8,7 @@ public class Main {
 
         System.out.print("Enter 2nd string: ");
         String t = latinLowerCaseInputValidator.validate();
+
+        AnagramChecker anagramChecker = new AnagramChecker();
     }
 }
