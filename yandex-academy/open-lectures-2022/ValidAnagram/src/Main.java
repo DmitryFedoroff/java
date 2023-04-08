@@ -10,5 +10,8 @@ public class Main {
         String t = latinLowerCaseInputValidator.validate();
 
         AnagramChecker anagramChecker = new AnagramChecker();
+
+        System.out.print("Are given strings anagrams? ");
+        anagramChecker.checkAndPrintResult(s, t);
     }
 }
