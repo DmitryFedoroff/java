@@ -13,5 +13,7 @@ public class Main {
 
         System.out.print("Are given strings anagrams? ");
         anagramChecker.checkAndPrintResult(s, t);
+
+        latinLowerCaseInputValidator.closeScanner();
     }
 }
