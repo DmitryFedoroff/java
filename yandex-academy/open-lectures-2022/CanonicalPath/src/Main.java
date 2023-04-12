@@ -8,5 +8,7 @@ public class Main {
 
         CanonicalPath canonicalPath = new CanonicalPath();
         String result = canonicalPath.getCanonicalPath(inputPath);
+
+        System.out.print("Canonical path: " + result);
     }
 }
