@@ -5,5 +5,7 @@ public class Main {
 
         System.out.print("Enter absolute address: ");
         String inputPath = absoluteAddrInputValidator.validate();
+
+        CanonicalPath canonicalPath = new CanonicalPath();
     }
 }
