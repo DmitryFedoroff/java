@@ -7,5 +7,6 @@ public class Main {
         String inputPath = absoluteAddrInputValidator.validate();
 
         CanonicalPath canonicalPath = new CanonicalPath();
+        String result = canonicalPath.getCanonicalPath(inputPath);
     }
 }
