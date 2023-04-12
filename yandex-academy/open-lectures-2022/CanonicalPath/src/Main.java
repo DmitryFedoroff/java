@@ -10,5 +10,7 @@ public class Main {
         String result = canonicalPath.getCanonicalPath(inputPath);
 
         System.out.print("Canonical path: " + result);
+
+        absoluteAddrInputValidator.closeScanner();
     }
 }
