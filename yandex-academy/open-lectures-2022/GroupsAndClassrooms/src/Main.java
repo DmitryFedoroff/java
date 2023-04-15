@@ -20,5 +20,6 @@ public class Main {
         int[] groupSizes = groupSizesInputValidator.validate();
 
         ClassroomSeating classroomSeating = new ClassroomSeating();
+        int result = classroomSeating.getMaxSeatedGroups(roomCaps, groupSizes);
     }
 }
