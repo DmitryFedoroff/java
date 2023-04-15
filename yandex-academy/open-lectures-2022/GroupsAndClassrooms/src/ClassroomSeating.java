@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class ClassroomSeating {
 
-    public static int getMaxSeatedGroups(int[] roomCaps, int[] groupSizes) {
+    public int getMaxSeatedGroups(int[] roomCaps, int[] groupSizes) {
         Arrays.sort(groupSizes);
         Arrays.sort(roomCaps);
 
