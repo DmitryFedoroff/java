@@ -22,6 +22,10 @@ public class Main {
         ClassroomSeating classroomSeating = new ClassroomSeating();
         int result = classroomSeating.getMaxSeatedGroups(roomCaps, groupSizes);
 
-        System.out.printf("Maximum number of groups can be seated: " + result);
+        System.out.print("Maximum number of groups can be seated: " + result);
+
+        arrayLenInputValidator.closeScanner();
+        classCapsInputValidator.closeScanner();
+        groupSizesInputValidator.closeScanner();
     }
 }
