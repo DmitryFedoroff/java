@@ -18,5 +18,7 @@ public class Main {
 
         System.out.print("Enter number of students in each group: ");
         int[] groupSizes = groupSizesInputValidator.validate();
+
+        ClassroomSeating classroomSeating = new ClassroomSeating();
     }
 }
