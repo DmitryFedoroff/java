@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Subtree {
 
-    public static int calculateSubtreeSizes(int vertex, List<List<Integer>> adjacencyList, int[] subtreeSizes) {
+    public int calculateSubtreeSizes(int vertex, List<List<Integer>> adjacencyList, int[] subtreeSizes) {
         subtreeSizes[vertex] = 1;
 
         for (int adjacentVertex : adjacencyList.get(vertex)) {
@@ -15,7 +15,7 @@ public class Subtree {
         return subtreeSizes[vertex];
     }
 
-    public static int[] storeSubtreeSizes(int n, ConnVertInputValidator connVertInputValidator) {
+    public int[] storeSubtreeSizes(int n, ConnVertInputValidator connVertInputValidator) {
         List<List<Integer>> adjacencyList = new ArrayList<>();
 
         for (int i = 0; i <= n; i++) {
@@ -41,7 +41,7 @@ public class Subtree {
         return result;
     }
 
-    public static String print(int[] ans) {
+    public String print(int[] ans) {
         StringBuilder sb = new StringBuilder();
 
         for (int an : ans) {
