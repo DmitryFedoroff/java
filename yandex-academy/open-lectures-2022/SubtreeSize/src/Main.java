@@ -7,9 +7,10 @@ public class Main {
         System.out.print("Enter the number of vertices: ");
         int numVertices = totalVertInputValidator.validate();
 
-        int[] result = Subtree.storeSubtreeSizes(numVertices, connVertInputValidator);
+        Subtree subtree = new Subtree();
+        int[] result = subtree.storeSubtreeSizes(numVertices, connVertInputValidator);
 
-        System.out.print("Size of subtree for each vertex: " + Subtree.print(result));
+        System.out.print("Size of subtree for each vertex: " + subtree.print(result));
 
         totalVertInputValidator.closeScanner();
         connVertInputValidator.closeScanner();
