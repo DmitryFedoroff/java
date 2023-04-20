@@ -3,7 +3,7 @@ import java.util.Comparator;
 
 public class ApplicationFinder {
 
-    public static int findMaxApplications(int n, InputValidatable<int[]> validator) {
+    public int findMaxApplications(int n, InputValidatable<int[]> validator) {
         int[][] applications = getApplications(n, validator);
         Arrays.sort(applications, Comparator.comparingInt(a -> a[1]));
         int end = applications[0][1];
@@ -18,7 +18,7 @@ public class ApplicationFinder {
         return count;
     }
 
-    private static int[][] getApplications(int n, InputValidatable<int[]> validator) {
+    private int[][] getApplications(int n, InputValidatable<int[]> validator) {
         int[][] applications = new int[n][2];
 
         for (int i = 0; i < n; i++) {
