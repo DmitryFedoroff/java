@@ -11,7 +11,8 @@ public class Main {
         System.out.print("Enter age of people: ");
         int[] peopleAges = peopleAgeInputValidator.validate();
 
-        int result = InvitationCounter.countInvites(totalPeople, peopleAges);
+        InvitationCounter invitationCounter = new InvitationCounter();
+        int result = invitationCounter.countInvites(totalPeople, peopleAges);
 
         System.out.printf("Total number of birthday invitations: " + result);
 
