@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class InvitationCounter {
 
-    public static int countInvites(int people, int[] ages) {
+    public int countInvites(int people, int[] ages) {
         int left = 0;
         int right = 0;
         int result = 0;
