@@ -24,5 +24,9 @@ public class Main {
 
         ResultPrinter resultPrinter = new ResultPrinter();
         resultPrinter.printResult(result);
+
+        natNumInputValidator.closeScanner();
+        desirableSubstancesValidator.closeScanner();
+        reactorSubstancesInputValidator.closeScanner();
     }
 }
