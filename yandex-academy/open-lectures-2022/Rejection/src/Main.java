@@ -21,5 +21,8 @@ public class Main {
 
         SubstanceChecker substanceChecker = new SubstanceChecker(desirableSubstances);
         String[] result = substanceChecker.checkSpelling(reactorSubstances);
+
+        ResultPrinter resultPrinter = new ResultPrinter();
+        resultPrinter.printResult(result);
     }
 }
