@@ -20,5 +20,6 @@ public class Main {
         String[] reactorSubstances = reactorSubstancesInputValidator.validate();
 
         SubstanceChecker substanceChecker = new SubstanceChecker(desirableSubstances);
+        String[] result = substanceChecker.checkSpelling(reactorSubstances);
     }
 }
