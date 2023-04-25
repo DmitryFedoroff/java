@@ -18,5 +18,7 @@ public class Main {
 
         System.out.print("Enter list of substances obtained in reactor: ");
         String[] reactorSubstances = reactorSubstancesInputValidator.validate();
+
+        SubstanceChecker substanceChecker = new SubstanceChecker(desirableSubstances);
     }
 }
