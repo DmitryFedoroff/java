@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class MajorityElementFinder {
 
-    public static int findMajority(int len, int[] nums) {
+    public int findMajority(int len, int[] nums) {
         Map<Integer, Integer> count = new HashMap<>();
 
         for (int i : nums) {
