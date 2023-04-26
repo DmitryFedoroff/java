@@ -11,7 +11,8 @@ public class Main {
         System.out.print("Enter numbers separated by whitespace: ");
         int[] nums = arrayNumsInputValidator.validate();
 
-        int result = MajorityElementFinder.findMajority(n, nums);
+        MajorityElementFinder majorityElementFinder = new MajorityElementFinder();
+        int result = majorityElementFinder.findMajority(n, nums);
 
         System.out.printf("Majority element in array: " + result);
 
