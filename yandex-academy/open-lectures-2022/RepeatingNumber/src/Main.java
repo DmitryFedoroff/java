@@ -17,5 +17,13 @@ public class Main {
 
         NumberRepetitionChecker repetitionChecker = new NumberRepetitionChecker();
         boolean hasRepetition = repetitionChecker.hasRepeatingNumberWithinDistance(nums, k);
+
+        RepetitionResultPrinter resultPrinter = new RepetitionResultPrinter();
+
+        System.out.println("Is there a repeated number with a maximum distance of " + k + " between repetitions?");
+        resultPrinter.print(hasRepetition);
+
+        numsValidator.closeScanner();
+        nkValuesValidator.closeScanner();
     }
 }
