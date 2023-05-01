@@ -14,5 +14,8 @@ public class Main {
 
         System.out.print("Enter numbers: ");
         List<Integer> nums = numsValidator.validate();
+
+        NumberRepetitionChecker repetitionChecker = new NumberRepetitionChecker();
+        boolean hasRepetition = repetitionChecker.hasRepeatingNumberWithinDistance(nums, k);
     }
 }
