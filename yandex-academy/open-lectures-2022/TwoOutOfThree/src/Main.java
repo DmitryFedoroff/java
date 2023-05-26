@@ -14,6 +14,9 @@ public class Main {
         Set<Integer> secondSet = getUserInput(listLengthValidator, "second", scanner);
         Set<Integer> thirdSet = getUserInput(listLengthValidator, "third", scanner);
 
+        CommonNumberFinder finder = new CommonNumberFinder();
+        Set<Integer> commonNumbers = finder.findCommonNumbers(firstSet, secondSet, thirdSet);
+
         scanner.close();
     }
 
