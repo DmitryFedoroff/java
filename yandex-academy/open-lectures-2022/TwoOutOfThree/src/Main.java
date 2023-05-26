@@ -17,6 +17,9 @@ public class Main {
         CommonNumberFinder finder = new CommonNumberFinder();
         Set<Integer> commonNumbers = finder.findCommonNumbers(firstSet, secondSet, thirdSet);
 
+        ResultPrinter printer = new ResultPrinter();
+        printer.printResult(commonNumbers);
+
         scanner.close();
     }
 
