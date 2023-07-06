@@ -15,8 +15,12 @@ public class GameField {
     private int columns;
     private char[][] field;
     private int requiredDots;
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
     private InputValidator inputValidator;
+
+    public GameField(Scanner scanner) {
+        this.scanner = scanner;
+    }
 
     public void initField() {
         inputValidator = new NaturalNumberValidator(scanner);
