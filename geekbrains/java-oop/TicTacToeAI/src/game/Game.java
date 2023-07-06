@@ -12,9 +12,11 @@ public class Game {
     private Player humanPlayer;
     private Player aiPlayer;
     private int currentTurn = 1;
+    private Scanner scanner;
 
     public Game() {
-        this.field = new GameField();
+        this.scanner = new Scanner(System.in);
+        this.field = new GameField(scanner);
         this.humanPlayer = new HumanPlayer();
         this.aiPlayer = new AIPlayer();
     }
