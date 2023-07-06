@@ -59,10 +59,21 @@ public class Game {
             }
             return true;
         }
-        if (currentTurn > field.getRows() * field.getColumns()) {
+        if (isFieldFull()) {
             System.out.println("Draw!");
             return true;
         }
         return false;
+    }
+
+    private boolean isFieldFull() {
+        for (int i = 0; i < field.getRows(); i++) {
+            for (int j = 0; j < field.getColumns(); j++) {
+                if (field.getCell(i, j) == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
