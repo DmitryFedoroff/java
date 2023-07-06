@@ -26,7 +26,8 @@ public class Game {
         while (true) {
             playRound();
             System.out.print("Play again? Yes / No: ");
-            if (!"Yes".equalsIgnoreCase(new Scanner(System.in).next())) {
+            String response = scanner.nextLine();
+            if (!"Yes".equalsIgnoreCase(response)) {
                 break;
             }
         }
