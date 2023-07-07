@@ -1,6 +1,7 @@
 package game;
 
 import model.GameField;
+import model.GameSymbol;
 import player.Player;
 import player.HumanPlayer;
 import player.AIPlayer;
@@ -39,21 +40,21 @@ public class Game {
         while (true) {
             humanPlayer.makeMove(field);
             field.printField();
-            if (checkEndGame('X')) {
+            if (checkEndGame(GameSymbol.X)) {
                 break;
             }
 
             aiPlayer.makeMove(field);
             field.printField();
-            if (checkEndGame('O')) {
+            if (checkEndGame(GameSymbol.O)) {
                 break;
             }
         }
     }
 
-    public boolean checkEndGame(char dot) {
+    public boolean checkEndGame(GameSymbol dot) {
         if (field.checkWin(dot)) {
-            if (dot == 'X') {
+            if (dot == GameSymbol.X) {
                 System.out.println("Human wins!");
             } else {
                 System.out.println("AI wins!");
@@ -70,7 +71,7 @@ public class Game {
     private boolean isFieldFull() {
         for (int i = 0; i < field.getRows(); i++) {
             for (int j = 0; j < field.getColumns(); j++) {
-                if (field.getCell(i, j) == ' ') {
+                if (field.getCell(i, j) == GameSymbol.EMPTY) {
                     return false;
                 }
             }
@@ -78,3 +79,4 @@ public class Game {
         return true;
     }
 }
+
