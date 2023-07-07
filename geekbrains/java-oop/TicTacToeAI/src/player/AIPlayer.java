@@ -1,6 +1,7 @@
 package player;
 
 import model.GameField;
+import model.GameSymbol;
 
 public class AIPlayer implements Player {
     private static final int MAX_DEPTH = 5;
@@ -8,11 +9,11 @@ public class AIPlayer implements Player {
     @Override
     public void makeMove(GameField field) {
         int[] result = minimax(MAX_DEPTH, Integer.MIN_VALUE, Integer.MAX_VALUE, field, true);
-        field.setCell(result[1], result[2], 'O');
+        field.setCell(result[1], result[2], GameSymbol.O);
     }
 
     private int[] minimax(int depth, int alpha, int beta, GameField field, boolean isMaximizingPlayer) {
-        if (depth == 0 || field.checkWin('O') || field.checkWin('X')) {
+        if (depth == 0 || field.checkWin(GameSymbol.O) || field.checkWin(GameSymbol.X)) {
             return new int[]{evaluateBoard(field), -1, -1};
         }
 
@@ -23,7 +24,7 @@ public class AIPlayer implements Player {
             for (int j = 0; j < field.getColumns(); j++) {
                 if (field.isCellEmpty(i, j)) {
                     if (isMaximizingPlayer) {
-                        field.setCell(i, j, 'O');
+                        field.setCell(i, j, GameSymbol.O);
                         int currentScore = minimax(depth - 1, alpha, beta, field, false)[0];
                         if (currentScore > alpha) {
                             alpha = currentScore;
@@ -31,7 +32,7 @@ public class AIPlayer implements Player {
                             bestY = j;
                         }
                     } else {
-                        field.setCell(i, j, 'X');
+                        field.setCell(i, j, GameSymbol.X);
                         int currentScore = minimax(depth - 1, alpha, beta, field, true)[0];
                         if (currentScore < beta) {
                             beta = currentScore;
@@ -39,7 +40,7 @@ public class AIPlayer implements Player {
                             bestY = j;
                         }
                     }
-                    field.setCell(i, j, ' ');
+                    field.setCell(i, j, GameSymbol.EMPTY);
                     if (alpha >= beta) {
                         break;
                     }
@@ -53,30 +54,30 @@ public class AIPlayer implements Player {
         int score = 0;
         for (int i = 0; i < field.getRows(); i++) {
             for (int j = 0; j < field.getColumns(); j++) {
-                if (field.getCell(i, j) == 'O') {
-                    if (field.checkLine(i, j, 0, 1, 'O')) {
+                if (field.getCell(i, j) == GameSymbol.O) {
+                    if (field.checkLine(i, j, 0, 1, GameSymbol.O)) {
                         score += 10;
                     }
-                    if (field.checkLine(i, j, 1, 0, 'O')) {
+                    if (field.checkLine(i, j, 1, 0, GameSymbol.O)) {
                         score += 10;
                     }
-                    if (field.checkLine(i, j, 1, 1, 'O')) {
+                    if (field.checkLine(i, j, 1, 1, GameSymbol.O)) {
                         score += 10;
                     }
-                    if (field.checkLine(i, j, -1, 1, 'O')) {
+                    if (field.checkLine(i, j, -1, 1, GameSymbol.O)) {
                         score += 10;
                     }
-                } else if (field.getCell(i, j) == 'X') {
-                    if (field.checkLine(i, j, 0, 1, 'X')) {
+                } else if (field.getCell(i, j) == GameSymbol.X) {
+                    if (field.checkLine(i, j, 0, 1, GameSymbol.X)) {
                         score -= 10;
                     }
-                    if (field.checkLine(i, j, 1, 0, 'X')) {
+                    if (field.checkLine(i, j, 1, 0, GameSymbol.X)) {
                         score -= 10;
                     }
-                    if (field.checkLine(i, j, 1, 1, 'X')) {
+                    if (field.checkLine(i, j, 1, 1, GameSymbol.X)) {
                         score -= 10;
                     }
-                    if (field.checkLine(i, j, -1, 1, 'X')) {
+                    if (field.checkLine(i, j, -1, 1, GameSymbol.X)) {
                         score -= 10;
                     }
                 }

@@ -10,10 +10,10 @@ public class GameField {
     private static final String ANSI_RED = "\u001B[31m";
     private static final String ANSI_RESET = "\u001B[0m";
 
-    private static final char DOT_EMPTY = ' ';
+    private GameSymbol DOT_EMPTY = GameSymbol.EMPTY;
     private int rows;
     private int columns;
-    private char[][] field;
+    private GameSymbol[][] field;
     private int requiredDots;
     private Scanner scanner;
     private InputValidator inputValidator;
@@ -37,7 +37,7 @@ public class GameField {
             }
         } while (requiredDots > Math.min(rows, columns));
 
-        field = new char[rows][columns];
+        field = new GameSymbol[rows][columns];
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -62,9 +62,9 @@ public class GameField {
         for (int i = 0; i < rows; i++) {
             System.out.printf("%3d │", (i + 1));
             for (int j = 0; j < columns; j++) {
-                if (field[i][j] == 'X') {
+                if (field[i][j] == GameSymbol.X) {
                     System.out.print(" " + ANSI_BLUE + field[i][j] + ANSI_RESET + " ");
-                } else if (field[i][j] == 'O') {
+                } else if (field[i][j] == GameSymbol.O) {
                     System.out.print(" " + ANSI_RED + field[i][j] + ANSI_RESET + " ");
                 } else {
                     System.out.print(" " + field[i][j] + " ");
@@ -97,15 +97,15 @@ public class GameField {
         return columns;
     }
 
-    public char getCell(int x, int y) {
+    public GameSymbol getCell(int x, int y) {
         return field[x][y];
     }
 
-    public void setCell(int x, int y, char dot) {
+    public void setCell(int x, int y, GameSymbol dot) {
         field[x][y] = dot;
     }
 
-    public boolean checkLine(int x, int y, int vx, int vy, char c) {
+    public boolean checkLine(int x, int y, int vx, int vy, GameSymbol c) {
         int wayX = x + (requiredDots - 1) * vx;
         int wayY = y + (requiredDots - 1) * vy;
 
@@ -122,7 +122,7 @@ public class GameField {
         return true;
     }
 
-    public boolean checkWin(char c) {
+    public boolean checkWin(GameSymbol c) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (field[i][j] == c) {
@@ -149,6 +149,7 @@ public class GameField {
     }
 
     public boolean isCellEmpty(int x, int y) {
-        return field[x][y] == DOT_EMPTY;
+        return field[x][y] == GameSymbol.EMPTY;
     }
 }
+
