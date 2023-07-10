@@ -5,6 +5,8 @@ import model.GameSymbol;
 
 public class AIPlayer implements Player {
     private static final int MAX_DEPTH = 5;
+    private static final int AI_WIN_SCORE = 10;
+    private static final int HUMAN_WIN_SCORE = -10;
 
     @Override
     public void makeMove(GameField field) {
@@ -52,33 +54,34 @@ public class AIPlayer implements Player {
 
     private int evaluateBoard(GameField field) {
         int score = 0;
+
         for (int i = 0; i < field.getRows(); i++) {
             for (int j = 0; j < field.getColumns(); j++) {
                 if (field.getCell(i, j) == GameSymbol.O) {
                     if (field.checkLine(i, j, 0, 1, GameSymbol.O)) {
-                        score += 10;
+                        score += AI_WIN_SCORE;
                     }
                     if (field.checkLine(i, j, 1, 0, GameSymbol.O)) {
-                        score += 10;
+                        score += AI_WIN_SCORE;
                     }
                     if (field.checkLine(i, j, 1, 1, GameSymbol.O)) {
-                        score += 10;
+                        score += AI_WIN_SCORE;
                     }
                     if (field.checkLine(i, j, -1, 1, GameSymbol.O)) {
-                        score += 10;
+                        score += AI_WIN_SCORE;
                     }
                 } else if (field.getCell(i, j) == GameSymbol.X) {
                     if (field.checkLine(i, j, 0, 1, GameSymbol.X)) {
-                        score -= 10;
+                        score += HUMAN_WIN_SCORE;
                     }
                     if (field.checkLine(i, j, 1, 0, GameSymbol.X)) {
-                        score -= 10;
+                        score += HUMAN_WIN_SCORE;
                     }
                     if (field.checkLine(i, j, 1, 1, GameSymbol.X)) {
-                        score -= 10;
+                        score += HUMAN_WIN_SCORE;
                     }
                     if (field.checkLine(i, j, -1, 1, GameSymbol.X)) {
-                        score -= 10;
+                        score += HUMAN_WIN_SCORE;
                     }
                 }
             }
