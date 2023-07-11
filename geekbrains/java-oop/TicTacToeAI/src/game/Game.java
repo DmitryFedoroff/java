@@ -3,8 +3,6 @@ package game;
 import model.GameField;
 import model.GameSymbol;
 import player.Player;
-import player.HumanPlayer;
-import player.AIPlayer;
 
 import java.util.Scanner;
 
@@ -14,12 +12,13 @@ public class Game {
     private Player aiPlayer;
     private int currentTurn = 1;
     private Scanner scanner;
+    private int totalMoves = 0;
 
-    public Game() {
-        this.scanner = new Scanner(System.in);
+    public Game(Player humanPlayer, Player aiPlayer, Scanner scanner) {
+        this.humanPlayer = humanPlayer;
+        this.aiPlayer = aiPlayer;
+        this.scanner = scanner;
         this.field = new GameField(scanner);
-        this.humanPlayer = new HumanPlayer();
-        this.aiPlayer = new AIPlayer();
     }
 
     public void start() {
@@ -37,14 +36,18 @@ public class Game {
     private void playRound() {
         field.initField();
         field.printField();
+        totalMoves = 0;
+
         while (true) {
             humanPlayer.makeMove(field);
+            totalMoves++;
             field.printField();
             if (checkEndGame(GameSymbol.X)) {
                 break;
             }
 
             aiPlayer.makeMove(field);
+            totalMoves++;
             field.printField();
             if (checkEndGame(GameSymbol.O)) {
                 break;
@@ -69,14 +72,6 @@ public class Game {
     }
 
     private boolean isFieldFull() {
-        for (int i = 0; i < field.getRows(); i++) {
-            for (int j = 0; j < field.getColumns(); j++) {
-                if (field.getCell(i, j) == GameSymbol.EMPTY) {
-                    return false;
-                }
-            }
-        }
-        return true;
+        return totalMoves >= field.getRows() * field.getColumns();
     }
 }
-
