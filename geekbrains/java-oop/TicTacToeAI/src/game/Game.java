@@ -22,13 +22,23 @@ public class Game {
     }
 
     public void start() {
-        System.out.println("Welcome to game! Let's get started.");
+        System.out.println("Welcome to game!");
+        System.out.print("Choose your symbol (X / O): ");
+        GameSymbol humanSymbol = "X".equalsIgnoreCase(scanner.nextLine()) ? GameSymbol.X : GameSymbol.O;
+        GameSymbol aiSymbol = (humanSymbol == GameSymbol.X) ? GameSymbol.O : GameSymbol.X;
+
+        humanPlayer.setSymbol(humanSymbol);
+        aiPlayer.setSymbol(aiSymbol);
+
         while (true) {
-            playRound();
-            System.out.print("Play again? Yes / No: ");
-            String response = scanner.nextLine();
-            if (!"Yes".equalsIgnoreCase(response)) {
-                break;
+            boolean gameOver = playRound();
+            if (gameOver) {
+                System.out.println("Game Over.");
+                System.out.print("Play again? Yes / No: ");
+                String response = scanner.nextLine();
+                if (!"Yes".equalsIgnoreCase(response)) {
+                    break;
+                }
             }
         }
     }
