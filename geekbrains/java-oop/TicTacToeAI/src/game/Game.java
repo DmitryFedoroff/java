@@ -10,7 +10,6 @@ public class Game {
     private GameField field;
     private Player humanPlayer;
     private Player aiPlayer;
-    private int currentTurn = 1;
     private Scanner scanner;
     private int totalMoves = 0;
 
@@ -43,45 +42,56 @@ public class Game {
         }
     }
 
-    private void playRound() {
+    private boolean playRound() {
         field.initField();
-        field.printField();
         totalMoves = 0;
 
-        while (true) {
-            humanPlayer.makeMove(field);
-            totalMoves++;
-            field.printField();
-            if (checkEndGame(GameSymbol.X)) {
-                break;
-            }
-
+        if (aiPlayer.getSymbol() == GameSymbol.X) {
             aiPlayer.makeMove(field);
             totalMoves++;
+        }
+
+        while (true) {
             field.printField();
-            if (checkEndGame(GameSymbol.O)) {
-                break;
+            if (!humanPlayer.makeMove(field)) {
+                return true;
+            }
+            totalMoves++;
+            field.printField();
+            if (checkEndGame(humanPlayer.getSymbol()) || isFieldFull()) {
+                return true;
+            }
+
+            if (totalMoves < field.getRows() * field.getColumns()) {
+                if (!aiPlayer.makeMove(field)) {
+                    return true;
+                }
+                totalMoves++;
+                field.printField();
+                if (checkEndGame(aiPlayer.getSymbol()) || isFieldFull()) {
+                    return true;
+                }
             }
         }
     }
 
-    public boolean checkEndGame(GameSymbol dot) {
-        if (field.checkWin(dot)) {
-            if (dot == GameSymbol.X) {
-                System.out.println("Human wins!");
-            } else {
-                System.out.println("AI wins!");
-            }
-            return true;
-        }
-        if (isFieldFull()) {
+    private boolean isFieldFull() {
+        if (totalMoves >= field.getRows() * field.getColumns()) {
             System.out.println("Draw!");
             return true;
         }
         return false;
     }
 
-    private boolean isFieldFull() {
-        return totalMoves >= field.getRows() * field.getColumns();
+    public boolean checkEndGame(GameSymbol dot) {
+        if (field.checkWin(dot)) {
+            if (dot == GameSymbol.X) {
+                System.out.println("AI wins!");
+            } else {
+                System.out.println("Human wins!");
+            }
+            return true;
+        }
+        return false;
     }
 }
