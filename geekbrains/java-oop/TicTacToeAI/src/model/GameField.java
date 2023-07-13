@@ -152,4 +152,3 @@ public class GameField {
         return field[x][y] == GameSymbol.EMPTY;
     }
 }
-
