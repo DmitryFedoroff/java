@@ -25,13 +25,13 @@ public class GameField {
     public void initField() {
         inputValidator = new NaturalNumberValidator(scanner);
         System.out.print("Enter number of rows: ");
-        rows = inputValidator.validate()[0];
+        rows = inputValidator.validateNumber();
         System.out.print("Enter number of columns: ");
-        columns = inputValidator.validate()[0];
+        columns = inputValidator.validateNumber();
 
         do {
             System.out.print("Enter required number of moves to win: ");
-            requiredDots = inputValidator.validate()[0];
+            requiredDots = inputValidator.validateNumber();
             if (requiredDots > Math.min(rows, columns)) {
                 System.out.println("Required number of moves to win should be less than or equal to smallest of number of rows and columns. Please try again.");
             }

@@ -11,7 +11,12 @@ public class TwoNaturalNumbersValidator implements InputValidator {
     }
 
     @Override
-    public int[] validate() {
+    public int validateNumber() {
+        throw new UnsupportedOperationException("Method validateNumber() is not supported in this class.");
+    }
+
+    @Override
+    public int[] validateNumbers() {
         while (true) {
             String input = scanner.nextLine();
             if (!input.matches(TWO_NATURAL_NUMBERS_REGEX)) {
@@ -22,5 +27,9 @@ public class TwoNaturalNumbersValidator implements InputValidator {
             }
         }
     }
-}
 
+    @Override
+    public String validateSymbol() {
+        throw new UnsupportedOperationException("Method validateSymbol() is not supported in this class.");
+    }
+}

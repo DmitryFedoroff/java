@@ -1,5 +1,7 @@
 package validation;
 
 public interface InputValidator {
-    int[] validate();
+    int validateNumber();
+    int[] validateNumbers();
+    String validateSymbol();
 }

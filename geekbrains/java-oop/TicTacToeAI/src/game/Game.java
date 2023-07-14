@@ -3,6 +3,7 @@ package game;
 import model.GameField;
 import model.GameSymbol;
 import player.Player;
+import validation.SymbolValidator;
 
 import java.util.Scanner;
 
@@ -23,7 +24,8 @@ public class Game {
     public void start() {
         System.out.println("Welcome to game!");
         System.out.print("Choose your symbol (X / O): ");
-        GameSymbol humanSymbol = "X".equalsIgnoreCase(scanner.nextLine()) ? GameSymbol.X : GameSymbol.O;
+        SymbolValidator symbolValidator = new SymbolValidator(scanner);
+        GameSymbol humanSymbol = "X".equals(symbolValidator.validateSymbol()) ? GameSymbol.X : GameSymbol.O;
         GameSymbol aiSymbol = (humanSymbol == GameSymbol.X) ? GameSymbol.O : GameSymbol.X;
 
         humanPlayer.setSymbol(humanSymbol);
