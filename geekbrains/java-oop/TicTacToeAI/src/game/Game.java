@@ -61,6 +61,11 @@ public class Game {
             totalMoves++;
             field.printField();
             if (checkEndGame(humanPlayer.getSymbol()) || isFieldFull()) {
+                if (checkEndGame(humanPlayer.getSymbol())) {
+                    System.out.println("Human wins!");
+                } else {
+                    System.out.println("Draw!");
+                }
                 return true;
             }
 
@@ -71,6 +76,11 @@ public class Game {
                 totalMoves++;
                 field.printField();
                 if (checkEndGame(aiPlayer.getSymbol()) || isFieldFull()) {
+                    if (checkEndGame(aiPlayer.getSymbol())) {
+                        System.out.println("AI wins!");
+                    } else {
+                        System.out.println("Draw!");
+                    }
                     return true;
                 }
             }
@@ -87,11 +97,6 @@ public class Game {
 
     public boolean checkEndGame(GameSymbol dot) {
         if (field.checkWin(dot)) {
-            if (dot == GameSymbol.X) {
-                System.out.println("AI wins!");
-            } else {
-                System.out.println("Human wins!");
-            }
             return true;
         }
         return false;
