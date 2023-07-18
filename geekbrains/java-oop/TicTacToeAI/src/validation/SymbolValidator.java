@@ -2,22 +2,12 @@ package validation;
 
 import java.util.Scanner;
 
-public class SymbolValidator implements InputValidator {
+public class SymbolValidator implements GameSymbolValidator {
     private static final String SYMBOL_REGEX = "^[XO]$";
     private Scanner scanner;
 
     public SymbolValidator(Scanner scanner) {
         this.scanner = scanner;
-    }
-
-    @Override
-    public int validateNumber() {
-        throw new UnsupportedOperationException("Method validateNumber() is not supported in this class.");
-    }
-
-    @Override
-    public int[] validateNumbers() {
-        throw new UnsupportedOperationException("Method validateNumbers() is not supported in this class.");
     }
 
     @Override
