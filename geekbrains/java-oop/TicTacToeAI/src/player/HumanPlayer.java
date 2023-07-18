@@ -2,14 +2,13 @@ package player;
 
 import model.GameField;
 import model.GameSymbol;
-import validation.InputValidator;
 import validation.TwoNaturalNumbersValidator;
 
 import java.util.Scanner;
 
 public class HumanPlayer implements Player {
     private GameSymbol symbol;
-    private InputValidator inputValidator;
+    private TwoNaturalNumbersValidator inputValidator;
 
     public void setSymbol(GameSymbol symbol) {
         this.symbol = symbol;

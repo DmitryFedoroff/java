@@ -1,6 +1,6 @@
 package model;
 
-import validation.InputValidator;
+import validation.NumberValidator;
 import validation.NaturalNumberValidator;
 
 import java.util.Scanner;
@@ -15,23 +15,21 @@ public class GameField {
     private int columns;
     private GameSymbol[][] field;
     private int requiredDots;
-    private Scanner scanner;
-    private InputValidator inputValidator;
+    private NumberValidator numberValidator;
 
     public GameField(Scanner scanner) {
-        this.scanner = scanner;
+        this.numberValidator = new NaturalNumberValidator(scanner);
     }
 
     public void initField() {
-        inputValidator = new NaturalNumberValidator(scanner);
         System.out.print("Enter number of rows: ");
-        rows = inputValidator.validateNumber();
+        rows = numberValidator.validateNumber();
         System.out.print("Enter number of columns: ");
-        columns = inputValidator.validateNumber();
+        columns = numberValidator.validateNumber();
 
         do {
             System.out.print("Enter required number of moves to win: ");
-            requiredDots = inputValidator.validateNumber();
+            requiredDots = numberValidator.validateNumber();
             if (requiredDots > Math.min(rows, columns)) {
                 System.out.println("Required number of moves to win should be less than or equal to smallest of number of rows and columns. Please try again.");
             }
