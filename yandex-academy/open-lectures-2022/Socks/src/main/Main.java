@@ -4,9 +4,10 @@ import function.SockThicknessCalculator;
 import function.SockThicknessCalculatorInterface;
 import validation.*;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,7 +21,6 @@ public class Main {
             return;
         }
 
-        List<String> data = Files.readAllLines(Path.of(filePath));
         fileValidator.notifyFileReadSuccessfully();
 
         InputValidator inputValidator = new TableSocksPointsValidator(scanner);
@@ -34,7 +34,7 @@ public class Main {
         GirlsInterestPointsValidatorInterface pointValidator = new GirlsInterestPointsValidator(scanner, m);
         int[] pointsOfInterest = pointValidator.validateInterestPoints();
 
-        SockThicknessCalculatorInterface calculator = new SockThicknessCalculator(l, n, m, data, pointsOfInterest);
+        SockThicknessCalculatorInterface calculator = new SockThicknessCalculator(l, n, m, filePath, pointsOfInterest);
         calculator.calculateThickness();
 
         scanner.close();
