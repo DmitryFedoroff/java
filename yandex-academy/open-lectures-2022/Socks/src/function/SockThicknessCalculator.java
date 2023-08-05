@@ -20,7 +20,7 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
     }
 
     @Override
-    public void calculateThickness() {
+    public int[] calculateThickness() {
         int[] balance = new int[l + 1];
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
@@ -35,7 +35,7 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
             }
         } catch (IOException e) {
             System.out.println("Error reading the file: " + e.getMessage());
-            return;
+            return null;
         }
 
         int now = 0;
@@ -45,7 +45,10 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
             now = now + balance[i];
             thickness[i] = now;
         }
+        return thickness;
+    }
 
+    public void printThickness(int[] thickness) {
         for (int i = 0; i < m; i++) {
             int query = pointsOfInterest[i];
             System.out.println("Thickness of sock coating at point " + query + ": " + thickness[query - 1]);
