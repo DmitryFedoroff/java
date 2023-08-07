@@ -48,6 +48,7 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
         return thickness;
     }
 
+    @Override
     public void printThickness(int[] thickness) {
         for (int i = 0; i < m; i++) {
             int query = pointsOfInterest[i];
