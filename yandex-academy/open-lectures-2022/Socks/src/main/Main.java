@@ -35,7 +35,7 @@ public class Main {
         int[] thickness = calculator.calculateThickness();
 
         if (thickness != null) {
-            ((SockThicknessCalculator) calculator).printThickness(thickness);
+            calculator.printThickness(thickness);
         }
 
         scanner.close();
