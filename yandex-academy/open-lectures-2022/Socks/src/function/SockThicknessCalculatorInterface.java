@@ -1,6 +1,8 @@
 package function;
 
+import java.util.List;
+
 public interface SockThicknessCalculatorInterface {
-    int[] calculateThickness();
-    void printThickness(int[] thickness);
+    List<Integer> calculateThickness();
+    void printThickness(List<Integer> thickness);
 }
