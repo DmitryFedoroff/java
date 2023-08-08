@@ -29,10 +29,10 @@ public class Main {
         int m = inputValues.get(2);
 
         GirlsInterestPointsValidatorInterface pointValidator = new GirlsInterestPointsValidator(scanner, m);
-        int[] pointsOfInterest = pointValidator.validateInterestPoints();
+        List<Integer> pointsOfInterest = pointValidator.validateInterestPoints();
 
         SockThicknessCalculatorInterface calculator = new SockThicknessCalculator(l, n, m, filePath, pointsOfInterest);
-        int[] thickness = calculator.calculateThickness();
+        List<Integer> thickness = calculator.calculateThickness();
 
         if (thickness != null) {
             calculator.printThickness(thickness);
