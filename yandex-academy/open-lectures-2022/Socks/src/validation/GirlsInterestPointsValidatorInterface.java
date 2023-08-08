@@ -1,5 +1,7 @@
 package validation;
 
+import java.util.List;
+
 public interface GirlsInterestPointsValidatorInterface {
-    int[] validateInterestPoints();
+    List<Integer> validateInterestPoints();
 }
