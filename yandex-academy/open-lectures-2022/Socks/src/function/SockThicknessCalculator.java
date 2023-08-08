@@ -3,15 +3,17 @@ package function;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SockThicknessCalculator implements SockThicknessCalculatorInterface {
     private int l;
     private int n;
     private int m;
     private String filePath;
-    private int[] pointsOfInterest;
+    private List<Integer> pointsOfInterest;
 
-    public SockThicknessCalculator(int l, int n, int m, String filePath, int[] pointsOfInterest) {
+    public SockThicknessCalculator(int l, int n, int m, String filePath, List<Integer> pointsOfInterest) {
         this.l = l;
         this.n = n;
         this.m = m;
@@ -20,8 +22,12 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
     }
 
     @Override
-    public int[] calculateThickness() {
-        int[] balance = new int[l + 1];
+    public List<Integer> calculateThickness() {
+        List<Integer> balance = new ArrayList<>(l + 1);
+
+        for (int i = 0; i <= l; i++) {
+            balance.add(0);
+        }
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -30,8 +36,8 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
                 String[] parts = line.split("\\s+");
                 int left = Integer.parseInt(parts[0]);
                 int right = Integer.parseInt(parts[1]);
-                balance[left - 1] += 1;
-                balance[right] -= 1;
+                balance.set(left - 1, balance.get(left - 1) + 1);
+                balance.set(right, balance.get(right) - 1);
             }
         } catch (IOException e) {
             System.out.println("Error reading the file: " + e.getMessage());
@@ -39,20 +45,20 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
         }
 
         int now = 0;
-        int[] thickness = new int[l];
+        List<Integer> thickness = new ArrayList<>();
 
         for (int i = 0; i < l; i++) {
-            now = now + balance[i];
-            thickness[i] = now;
+            now = now + balance.get(i);
+            thickness.add(now);
         }
         return thickness;
     }
 
     @Override
-    public void printThickness(int[] thickness) {
+    public void printThickness(List<Integer> thickness) {
         for (int i = 0; i < m; i++) {
-            int query = pointsOfInterest[i];
-            System.out.println("Thickness of sock coating at point " + query + ": " + thickness[query - 1]);
+            int query = pointsOfInterest.get(i);
+            System.out.println("Thickness of sock coating at point " + query + ": " + thickness.get(query - 1));
         }
     }
 }
