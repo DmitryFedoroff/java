@@ -44,12 +44,12 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
             return null;
         }
 
-        int now = 0;
+        int currentThickness = 0;
         List<Integer> thickness = new ArrayList<>();
 
         for (int i = 0; i < l; i++) {
-            now = now + balance.get(i);
-            thickness.add(now);
+            currentThickness = currentThickness + balance.get(i);
+            thickness.add(currentThickness);
         }
         return thickness;
     }
