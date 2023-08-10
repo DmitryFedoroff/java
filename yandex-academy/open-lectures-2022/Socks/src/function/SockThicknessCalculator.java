@@ -1,5 +1,7 @@
 package function;
 
+import exceptions.FileReadingException;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,9 +24,8 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
     }
 
     @Override
-    public List<Integer> calculateThickness() {
+    public List<Integer> calculateThickness() throws FileReadingException {
         List<Integer> balance = new ArrayList<>(l + 1);
-
         for (int i = 0; i <= l; i++) {
             balance.add(0);
         }
@@ -40,15 +41,13 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
                 balance.set(right, balance.get(right) - 1);
             }
         } catch (IOException e) {
-            System.out.println("Error reading the file: " + e.getMessage());
-            return null;
+            throw new FileReadingException("Error reading the file: " + filePath, e);
         }
 
         int currentThickness = 0;
         List<Integer> thickness = new ArrayList<>();
-
         for (int i = 0; i < l; i++) {
-            currentThickness = currentThickness + balance.get(i);
+            currentThickness += balance.get(i);
             thickness.add(currentThickness);
         }
         return thickness;
