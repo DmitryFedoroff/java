@@ -1,6 +1,6 @@
 package exceptions;
 
-public class FileReadingException extends Exception {
+public class FileReadingException extends RuntimeException {
     public FileReadingException(String message, Throwable cause) {
         super(message, cause);
     }
