@@ -1,16 +1,18 @@
 package main;
 
+import errorhandler.BasicErrorHandler;
+import errorhandler.ErrorHandlerInterface;
 import function.SockThicknessCalculator;
 import function.SockThicknessCalculatorInterface;
 import validation.*;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ErrorHandlerInterface errorHandler = new BasicErrorHandler();
 
         String filePath = "socks_ends_data.txt";
         SockFileValidatorInterface fileValidator = new SockFileValidator(filePath);
@@ -32,10 +34,11 @@ public class Main {
         List<Integer> pointsOfInterest = pointValidator.validateInterestPoints();
 
         SockThicknessCalculatorInterface calculator = new SockThicknessCalculator(l, n, m, filePath, pointsOfInterest);
-        List<Integer> thickness = calculator.calculateThickness();
-
-        if (thickness != null) {
+        try {
+            List<Integer> thickness = calculator.calculateThickness();
             calculator.printThickness(thickness);
+        } catch (Exception e) {
+            errorHandler.handleException(e);
         }
 
         scanner.close();
