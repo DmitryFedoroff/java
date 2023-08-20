@@ -7,14 +7,24 @@ import function.SockThicknessCalculatorInterface;
 import validation.*;
 import exceptions.InvalidFileDataException;
 
+import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
+        String filePath;
+
+        if (args.length == 0 || !new File(args[0]).exists()) {
+            System.out.println("Please specify the path to the sock data file: ");
+            Scanner scannerForPath = new Scanner(System.in);
+            filePath = scannerForPath.nextLine();
+        } else {
+            filePath = args[0];
+        }
+
         ErrorHandlerInterface errorHandler = new BasicErrorHandler();
-        String filePath = "socks_ends_data.txt";
 
         try (Scanner scanner = new Scanner(System.in)) {
 
