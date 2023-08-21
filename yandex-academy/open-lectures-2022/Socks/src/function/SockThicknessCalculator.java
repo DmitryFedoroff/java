@@ -46,7 +46,7 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
         }
     }
 
-    private boolean isInteger(String s) {
+    private static boolean isInteger(String s) {
         try {
             Integer.parseInt(s);
             return true;
