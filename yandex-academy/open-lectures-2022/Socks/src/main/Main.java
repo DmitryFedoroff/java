@@ -5,13 +5,15 @@ import errorhandler.ErrorHandlerInterface;
 import function.SockThicknessCalculatorInterface;
 import validation.*;
 import exceptions.InvalidFileDataException;
-
 import factories.SockFileValidatorFactory;
 import factories.SockThicknessCalculatorFactory;
 
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.io.IOException;
 
 public class Main {
 
@@ -30,15 +32,15 @@ public class Main {
         }
 
         ErrorHandlerInterface errorHandler = new BasicErrorHandler();
+        List<String> fileLines = readAllLines(filePath);
 
         try (Scanner scanner = new Scanner(System.in)) {
-
             SockFileValidatorInterface fileValidator = fileValidatorFactory.create(filePath);
             if (!fileValidator.isFileValid()) {
                 return;
             }
 
-            SockThicknessCalculatorInterface calculator = calculatorFactory.create(0, 0, 0, filePath, null);
+            SockThicknessCalculatorInterface calculator = calculatorFactory.create(0, 0, 0, fileLines, null);
 
             try {
                 calculator.validateFileData();
@@ -59,13 +61,21 @@ public class Main {
             GirlsInterestPointsValidatorInterface pointValidator = new GirlsInterestPointsValidator(scanner, m);
             List<Integer> pointsOfInterest = pointValidator.validateInterestPoints();
 
-            calculator = calculatorFactory.create(l, n, m, filePath, pointsOfInterest);
+            calculator = calculatorFactory.create(l, n, m, fileLines, pointsOfInterest);
             try {
                 List<Integer> thickness = calculator.calculateThickness();
                 calculator.printThickness(thickness);
             } catch (Exception e) {
                 errorHandler.handleException(e);
             }
+        }
+    }
+
+    private static List<String> readAllLines(String filePath) {
+        try {
+            return Files.readAllLines(Paths.get(filePath));
+        } catch (IOException e) {
+            throw new RuntimeException("Error reading file: " + filePath, e);
         }
     }
 }
