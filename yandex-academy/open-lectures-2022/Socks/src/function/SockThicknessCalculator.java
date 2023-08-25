@@ -25,8 +25,13 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
         for (String line : fileLines) {
             lineNumber++;
             String[] parts = line.split("\\s+");
-            if (parts.length != 2 || !isInteger(parts[0]) || !isInteger(parts[1])) {
+            if (parts.length != 2) {
                 throw new InvalidFileDataException("Invalid data format at line: " + lineNumber);
+            }
+            for (String part : parts) {
+                if (!isInteger(part)) {
+                    throw new InvalidFileDataException("Invalid data format at line: " + lineNumber);
+                }
             }
         }
     }
