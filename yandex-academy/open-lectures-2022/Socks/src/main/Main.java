@@ -17,18 +17,23 @@ import java.io.IOException;
 
 public class Main {
 
+    private static final int ARGUMENT_FILE_PATH_INDEX = 0;
+    private static final int L_INDEX = 0;
+    private static final int N_INDEX = 1;
+    private static final int M_INDEX = 2;
+
     private static SockFileValidatorFactory fileValidatorFactory = new SockFileValidatorFactory();
     private static SockThicknessCalculatorFactory calculatorFactory = new SockThicknessCalculatorFactory();
 
     public static void main(String[] args) {
         String filePath;
 
-        if (args.length == 0 || !new File(args[0]).exists()) {
-            System.out.println("Please specify the path to the sock data file: ");
+        if (args.length == 0 || !new File(args[ARGUMENT_FILE_PATH_INDEX]).exists()) {
+            System.out.println("Please specify path to sock data file: ");
             Scanner scannerForPath = new Scanner(System.in);
             filePath = scannerForPath.nextLine();
         } else {
-            filePath = args[0];
+            filePath = args[ARGUMENT_FILE_PATH_INDEX];
         }
 
         ErrorHandlerInterface errorHandler = new BasicErrorHandler();
@@ -54,9 +59,9 @@ public class Main {
             InputValidator inputValidator = new TableSocksPointsValidator(scanner);
             System.out.print("Enter numbers for L, N, and M separated by whitespace: ");
             List<Integer> inputValues = inputValidator.validate();
-            int l = inputValues.get(0);
-            int n = inputValues.get(1);
-            int m = inputValues.get(2);
+            int l = inputValues.get(L_INDEX);
+            int n = inputValues.get(N_INDEX);
+            int m = inputValues.get(M_INDEX);
 
             GirlsInterestPointsValidatorInterface pointValidator = new GirlsInterestPointsValidator(scanner, m);
             List<Integer> pointsOfInterest = pointValidator.validateInterestPoints();
