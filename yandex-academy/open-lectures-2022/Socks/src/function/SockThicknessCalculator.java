@@ -3,6 +3,8 @@ package function;
 import exceptions.InvalidFileDataException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 public class SockThicknessCalculator implements SockThicknessCalculatorInterface {
     private static final int EXPECTED_PARTS_PER_LINE = 2;
@@ -12,6 +14,7 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
     private int m;
     private List<String> fileLines;
     private List<Integer> pointsOfInterest;
+    private Map<Integer, String[]> parsedLinesCache = new HashMap<>();
 
     public SockThicknessCalculator(int l, int n, int m, List<String> fileLines, List<Integer> pointsOfInterest) {
         this.l = l;
@@ -55,7 +58,7 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
         }
 
         for (int i = 0; i < n; i++) {
-            String[] parts = fileLines.get(i).split("\\s+");
+            String[] parts = getParsedLine(i);
             int left = Integer.parseInt(parts[0]);
             int right = Integer.parseInt(parts[1]);
             balance.set(left - 1, balance.get(left - 1) + 1);
@@ -70,6 +73,13 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
             thickness.add(currentThickness);
         }
         return thickness;
+    }
+
+    private String[] getParsedLine(int index) {
+        if (!parsedLinesCache.containsKey(index)) {
+            parsedLinesCache.put(index, fileLines.get(index).split("\\s+"));
+        }
+        return parsedLinesCache.get(index);
     }
 
     @Override
