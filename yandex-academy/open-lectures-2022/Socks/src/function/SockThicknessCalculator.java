@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SockThicknessCalculator implements SockThicknessCalculatorInterface {
+    private static final int EXPECTED_PARTS_PER_LINE = 2;
+
     private int l;
     private int n;
     private int m;
@@ -25,7 +27,7 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
         for (String line : fileLines) {
             lineNumber++;
             String[] parts = line.split("\\s+");
-            if (parts.length != 2) {
+            if (parts.length != EXPECTED_PARTS_PER_LINE) {
                 throw new InvalidFileDataException("Invalid data format at line: " + lineNumber);
             }
             for (String part : parts) {
