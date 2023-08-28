@@ -1,12 +1,18 @@
 package main;
 
-import errorhandler.BasicErrorHandler;
-import errorhandler.ErrorHandlerInterface;
-import function.SockThicknessCalculatorInterface;
-import validation.*;
-import exceptions.InvalidFileDataException;
+import factories.FileValidatorFactoryInterface;
 import factories.SockFileValidatorFactory;
+import factories.ThicknessCalculatorFactoryInterface;
 import factories.SockThicknessCalculatorFactory;
+import function.SockThicknessCalculatorInterface;
+import validation.InputValidator;
+import validation.SockFileValidatorInterface;
+import validation.TableSocksPointsValidator;
+import validation.GirlsInterestPointsValidatorInterface;
+import validation.GirlsInterestPointsValidator;
+import errorhandler.ErrorHandlerInterface;
+import errorhandler.BasicErrorHandler;
+import exceptions.InvalidFileDataException;
 
 import java.io.File;
 import java.util.List;
@@ -22,10 +28,16 @@ public class Main {
     private static final int N_INDEX = 1;
     private static final int M_INDEX = 2;
 
-    private static SockFileValidatorFactory fileValidatorFactory = new SockFileValidatorFactory();
-    private static SockThicknessCalculatorFactory calculatorFactory = new SockThicknessCalculatorFactory();
+    private final FileValidatorFactoryInterface fileValidatorFactory;
+    private final ThicknessCalculatorFactoryInterface calculatorFactory;
 
-    public static void main(String[] args) {
+    public Main(FileValidatorFactoryInterface fileValidatorFactory,
+                ThicknessCalculatorFactoryInterface calculatorFactory) {
+        this.fileValidatorFactory = fileValidatorFactory;
+        this.calculatorFactory = calculatorFactory;
+    }
+
+    public void run(String[] args) {
         String filePath;
 
         if (args.length == 0 || !new File(args[ARGUMENT_FILE_PATH_INDEX]).exists()) {
@@ -82,5 +94,13 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException("Error reading file: " + filePath, e);
         }
+    }
+
+    public static void main(String[] args) {
+        FileValidatorFactoryInterface fileValidatorFactory = new SockFileValidatorFactory();
+        ThicknessCalculatorFactoryInterface calculatorFactory = new SockThicknessCalculatorFactory();
+
+        Main application = new Main(fileValidatorFactory, calculatorFactory);
+        application.run(args);
     }
 }
