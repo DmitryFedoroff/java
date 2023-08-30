@@ -12,6 +12,7 @@ import validation.GirlsInterestPointsValidatorInterface;
 import validation.GirlsInterestPointsValidator;
 import errorhandler.ErrorHandlerInterface;
 import errorhandler.BasicErrorHandler;
+import exceptions.FileReadingException;
 import exceptions.InvalidFileDataException;
 
 import java.io.File;
@@ -39,6 +40,7 @@ public class Main {
 
     public void run(String[] args) {
         String filePath;
+        List<String> fileLines;
 
         if (args.length == 0 || !new File(args[ARGUMENT_FILE_PATH_INDEX]).exists()) {
             System.out.println("Please specify path to sock data file: ");
@@ -48,8 +50,14 @@ public class Main {
             filePath = args[ARGUMENT_FILE_PATH_INDEX];
         }
 
+        try {
+            fileLines = readAllLines(filePath);
+        } catch (FileReadingException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+
         ErrorHandlerInterface errorHandler = new BasicErrorHandler();
-        List<String> fileLines = readAllLines(filePath);
 
         try (Scanner scanner = new Scanner(System.in)) {
             SockFileValidatorInterface fileValidator = fileValidatorFactory.create(filePath);
@@ -88,11 +96,11 @@ public class Main {
         }
     }
 
-    private static List<String> readAllLines(String filePath) {
+    private static List<String> readAllLines(String filePath) throws FileReadingException {
         try {
             return Files.readAllLines(Paths.get(filePath));
         } catch (IOException e) {
-            throw new RuntimeException("Error reading file: " + filePath, e);
+            throw new FileReadingException("Error reading file: " + filePath, e);
         }
     }
 
