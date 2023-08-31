@@ -24,6 +24,7 @@ import java.io.IOException;
 
 public class Main {
 
+    private static final int NO_ARGUMENTS = 0;
     private static final int ARGUMENT_FILE_PATH_INDEX = 0;
     private static final int L_INDEX = 0;
     private static final int N_INDEX = 1;
@@ -42,7 +43,7 @@ public class Main {
         String filePath;
         List<String> fileLines;
 
-        if (args.length == 0 || !new File(args[ARGUMENT_FILE_PATH_INDEX]).exists()) {
+        if (args.length == NO_ARGUMENTS || !new File(args[ARGUMENT_FILE_PATH_INDEX]).exists()) {
             System.out.println("Please specify path to sock data file: ");
             Scanner scannerForPath = new Scanner(System.in);
             filePath = scannerForPath.nextLine();
