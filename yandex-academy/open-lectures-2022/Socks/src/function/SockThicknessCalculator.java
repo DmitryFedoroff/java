@@ -65,7 +65,7 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
             int left = Integer.parseInt(parts[0]);
             int right = Integer.parseInt(parts[1]);
             balance.set(left - 1, balance.get(left - 1) + BALANCE_INCREMENT);
-            balance.set(right, balance.get(right) - BALANCE_DECREMENT);
+            balance.set(right, balance.get(right) + BALANCE_DECREMENT);
         }
 
         int currentThickness = 0;
