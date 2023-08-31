@@ -8,6 +8,9 @@ import java.util.HashMap;
 
 public class SockThicknessCalculator implements SockThicknessCalculatorInterface {
     private static final int EXPECTED_PARTS_PER_LINE = 2;
+    private static final int INITIAL_BALANCE = 0;
+    private static final int BALANCE_INCREMENT = 1;
+    private static final int BALANCE_DECREMENT = -1;
 
     private int l;
     private int n;
@@ -54,15 +57,15 @@ public class SockThicknessCalculator implements SockThicknessCalculatorInterface
     public List<Integer> calculateThickness() {
         List<Integer> balance = new ArrayList<>(l + 1);
         for (int i = 0; i <= l; i++) {
-            balance.add(0);
+            balance.add(INITIAL_BALANCE);
         }
 
         for (int i = 0; i < n; i++) {
             String[] parts = getParsedLine(i);
             int left = Integer.parseInt(parts[0]);
             int right = Integer.parseInt(parts[1]);
-            balance.set(left - 1, balance.get(left - 1) + 1);
-            balance.set(right, balance.get(right) - 1);
+            balance.set(left - 1, balance.get(left - 1) + BALANCE_INCREMENT);
+            balance.set(right, balance.get(right) - BALANCE_DECREMENT);
         }
 
         int currentThickness = 0;
