@@ -1,9 +1,7 @@
 package main;
 
 import factories.FileValidatorFactoryInterface;
-import factories.SockFileValidatorFactory;
 import factories.ThicknessCalculatorFactoryInterface;
-import factories.SockThicknessCalculatorFactory;
 import function.SockThicknessCalculatorInterface;
 import validation.InputValidator;
 import validation.SockFileValidatorInterface;
@@ -22,6 +20,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
 
+import di.DependencyContainer;
+
 public class Main {
 
     private static final int NO_ARGUMENTS = 0;
@@ -33,10 +33,9 @@ public class Main {
     private final FileValidatorFactoryInterface fileValidatorFactory;
     private final ThicknessCalculatorFactoryInterface calculatorFactory;
 
-    public Main(FileValidatorFactoryInterface fileValidatorFactory,
-                ThicknessCalculatorFactoryInterface calculatorFactory) {
-        this.fileValidatorFactory = fileValidatorFactory;
-        this.calculatorFactory = calculatorFactory;
+    public Main(DependencyContainer container) {
+        this.fileValidatorFactory = container.getFileValidatorFactory();
+        this.calculatorFactory = container.getThicknessCalculatorFactory();
     }
 
     public void run(String[] args) {
@@ -106,10 +105,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        FileValidatorFactoryInterface fileValidatorFactory = new SockFileValidatorFactory();
-        ThicknessCalculatorFactoryInterface calculatorFactory = new SockThicknessCalculatorFactory();
-
-        Main application = new Main(fileValidatorFactory, calculatorFactory);
+        DependencyContainer container = new DependencyContainer();
+        Main application = new Main(container);
         application.run(args);
     }
 }
