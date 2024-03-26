@@ -60,7 +60,8 @@ public class Shopping {
                 productCount = 0;
                 System.out.println("\nСписок покупок очищен.");
             } else if (actionNumber == 4) {
-
+                System.out.println("\nРабота программы завершена.");
+                break;
             } else {
                 System.out.println("\nНеизвестная команда!");
             }
