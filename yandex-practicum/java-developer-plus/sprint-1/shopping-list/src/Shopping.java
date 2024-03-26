@@ -45,7 +45,14 @@ public class Shopping {
                     System.out.println("\nТовар \"" + productName + "\" уже есть в списке.");
                 }
             } else if (actionNumber == 2) {
-
+                if (productCount == 0) {
+                    System.out.println("\nСписок покупок пуст.");
+                } else {
+                    System.out.println("\nСписок покупок:");
+                    for (int i = 0; i < productCount; i++) {
+                        System.out.println((i + 1) + ". " + shoppingList[i]);
+                    }
+                }
             } else if (actionNumber == 3) {
 
             } else if (actionNumber == 4) {
