@@ -54,9 +54,6 @@ public class Shopping {
                     }
                 }
             } else if (actionNumber == 3) {
-                for (int i = 0; i < productCount; i++) {
-                    shoppingList[i] = null;
-                }
                 productCount = 0;
                 System.out.println("\nСписок покупок очищен.");
             } else if (actionNumber == 4) {
