@@ -41,4 +41,16 @@ public class StepTracker {
         monthToData[month].days[day] = steps;
         System.out.println("\nКоличество шагов сохранено.");
     }
+
+    void changeStepGoal() {
+        System.out.println("\nВведите новую цель по шагам:");
+        int newGoal = scanner.nextInt();
+
+        if (newGoal > 0) {
+            goalByStepsPerDay = newGoal;
+            System.out.println("\nНовая цель установлена.");
+        } else {
+            System.out.println("\nЦель должна быть больше 0.");
+        }
+    }
 }
