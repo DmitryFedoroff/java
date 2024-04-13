@@ -12,4 +12,33 @@ public class StepTracker {
             monthToData[i] = new MonthData();
         }
     }
+
+    void addNewNumberStepsPerDay() {
+        System.out.println("\nВведите номер месяца:");
+        int month = scanner.nextInt() - 1;
+
+        if (month < 0 || month > 11) {
+            System.out.println("\nНеверный номер месяца.");
+            return;
+        }
+
+        System.out.println("Введите день от 1 до 30 (включительно):");
+        int day = scanner.nextInt() - 1;
+
+        if (day < 0 || day > 29) {
+            System.out.println("\nНеверный день.");
+            return;
+        }
+
+        System.out.println("Введите количество шагов:");
+        int steps = scanner.nextInt();
+
+        if (steps < 0) {
+            System.out.println("\nКоличество шагов не может быть отрицательным.");
+            return;
+        }
+
+        monthToData[month].days[day] = steps;
+        System.out.println("\nКоличество шагов сохранено.");
+    }
 }
