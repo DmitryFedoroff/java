@@ -24,4 +24,19 @@ public class MonthData {
         }
         return maxSteps;
     }
+
+    int bestSeries(int goalByStepsPerDay) {
+        int currentSeries = 0;
+        int finalSeries = 0;
+
+        for (int day : days) {
+            if (day >= goalByStepsPerDay) {
+                currentSeries++;
+                finalSeries = Math.max(finalSeries, currentSeries);
+            } else {
+                currentSeries = 0;
+            }
+        }
+        return finalSeries;
+    }
 }
