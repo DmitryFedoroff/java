@@ -6,4 +6,13 @@ public class MonthData {
             System.out.println((i + 1) + " день: " + days[i]);
         }
     }
+
+    int sumStepsFromMonth() {
+        int sumSteps = 0;
+
+        for (int day : days) {
+            sumSteps += day;
+        }
+        return sumSteps;
+    }
 }
