@@ -15,4 +15,13 @@ public class MonthData {
         }
         return sumSteps;
     }
+
+    int maxSteps() {
+        int maxSteps = 0;
+
+        for (int day : days) {
+            maxSteps = Math.max(maxSteps, day);
+        }
+        return maxSteps;
+    }
 }
